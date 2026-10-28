@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUVELOIR — Catálogo de Componentes (Fase 2)</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Base Overview Stylesheet -->
+    <link rel="stylesheet" href="../overview/fonts.css">
+    <link rel="stylesheet" href="../overview/style.css">
+    <!-- Components Catalog Stylesheet -->
+    <link rel="stylesheet" href="components.css">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+<body>
+    <!-- Live Principal Background (Extraído diretamente da Overview) -->
+    <div class="bg-aura-wrapper">
+        <div class="aura-1"></div>
+        <div class="bg-noise"></div>
+    </div>
+
+    <div class="components-layout">
+        <!-- Sidebar Sticky de Navegação -->
+        <aside class="components-sidebar" aria-label="Navegação do Catálogo">
+            <div class="sidebar-category">
+                <span class="sidebar-title">Fundações</span>
+                <ul class="sidebar-menu">
+                    <li><a href="#typography" class="sidebar-link active">Tipografia</a></li>
+                    <li><a href="#colors" class="sidebar-link">Cores Semânticas</a></li>
+                    <li><a href="#backgrounds" class="sidebar-link">Planos de Fundo</a></li>
+                    <li><a href="#surfaces" class="sidebar-link">Superfícies & Vidro</a></li>
+                    <li><a href="#icons" class="sidebar-link">Ícones & Símbolos</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-category">
+                <span class="sidebar-title">Componentes</span>
+                <ul class="sidebar-menu">
+                    <li><a href="#actions" class="sidebar-link">Ações & Botões</a></li>
+                    <li><a href="#navigation" class="sidebar-link">Navegação & Rodapé</a></li>
+                    <li><a href="#badges" class="sidebar-link">Badges & Status</a></li>
+                    <li><a href="#cards" class="sidebar-link">Cards & Containers</a></li>
+                    <li><a href="#timeline" class="sidebar-link">Linha do Tempo</a></li>
+                    <li><a href="#kinetic" class="sidebar-link">Movimento & Marquee</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Área Principal de Conteúdo -->
+        <main class="components-main">
+
+            <!-- ================================================================
+                 1. FUNDAÇÕES: TIPOGRAFIA
+                 ================================================================ -->
+            <section id="typography" class="component-group">
+                <div class="group-header">
+                    <span class="group-eyebrow">Fundação 01</span>
+                    <h2 class="group-title">Tipografia</h2>
+                    <p class="group-desc">Escala tipográfica expressiva composta por Space Grotesk (títulos e display), Inter (corpo e leitura) e IBM Plex Mono (metadados e dados técnicos).</p>
+                </div>
+
+                <div class="type-table">
+                    <!-- Display Heading -->
+                    <div class="type-row">
+                        <div class="type-role">
+                            <span class="type-role-name">Display Heading</span>
+                            <span class="type-font-info">Space Grotesk · SemiBold 600</span>
+                        </div>
+                        <div class="type-sample">
+                            <h1 class="headline" style="font-size: clamp(2.4rem, 3.5vw, 3.8rem); line-height: 1.05;">
+                                MELLO<br><span>Design System.</span>
+                            </h1>
+                        </div>
+                        <div class="type-metric">clamp(2.8rem, 2.2rem + 3.5vw, 4.8rem)</div>
+                    </div>
+
+                    <!-- Heading 1 Section -->
+                    <div class="type-row">
+                        <div class="type-role">
+                            <span class="type-role-name">Heading 1 · Seção</span>
+                            <span class="type-font-info">Space Grotesk · SemiBold 600</span>
+                        </div>
+                        <div class="type-sample">
+                            <h2 class="headline" style="font-size: clamp(1.8rem, 2.5vw, 2.6rem); line-height: 1.1;">
+                                De números a estratégia: uma trajetória construída em cima de <span>dados reais.</span>
+                            </h2>
+                        </div>
+                        <div class="type-metric">clamp(2.25rem, 1.8rem + 2.25vw, 3.25rem)</div>
+                    </div>
+
+                    <!-- Heading 2 Project Title -->
+                    <div class="type-row">
+                        <div class="type-role">
+                            <span class="type-role-name">Heading 2 · Card Bento</span>
+                            <span class="type-font-info">Space Grotesk · Bold 700</span>
+                        </div>
+                        <div class="type-sample">
+                            <div class="project-title" style="margin-bottom: 0;">DASHBOARD<br>COMERCIAL</div>
+                        </div>
+                        <div class="type-metric">clamp(2rem, 3.2vw, 3.2rem)</div>
+                    </div>
+
+                    <!-- Heading 3 Entity Name -->
+                    <div class="type-row">
+                        <div class="type-role">
+                            <span class="type-role-name">Heading 3 · Entidade</span>
+                            <span class="type-font-info">Space Grotesk · Medium 500</span>
+                        </div>
+                        <div class="type-sample">
+                            <div class="company-name">Asimov Academy</div>
+                        </div>
+                        <div class="type-metric">clamp(1.35rem, 1.2rem + 0.75vw, 1.65rem)</div>
+                    </div>
+
+                    <!-- Body Lead / Subheadline -->
+                    <div class="type-row">
+                        <div class="type-role">
+                            <span class="type-role-name">Subheadline · Lead</span>
+                            <span class="type-font-info">Inter · Light 300</span>
+                        </div>
+                        <div class="type-sample">
+                            <p class="subheadline" style="font-size: 1.15rem; line-height: 1.6;">
+                                Interface minimalista de alta precisão com estética Void Black, superfícies Deep Surface e sinal gráfico Event Red.
+                            </p>
+                        </div>
+                        <div class="type-metric">clamp(1.1rem, 1.02rem + 0.4vw, 1.25rem)</div>
+                    </div>
+
+                    <!-- Body Regular -->
+                    <div class="type-row">
+                        <div class="type-role">
+                            <span class="type-role-name">Body Copy · Regular</span>
+                            <span class="type-font-info">Inter · Regular 400</span>
+                        </div>
+                        <div class="type-sample">
+                            <p class="job-desc" style="font-size: 0.95rem; line-height: 1.6;">
+                                Analista de dados no time de crédito. Primeiro contato com dados em escala: milhões de transações, decisões em tempo real, cultura orientada a evidências.
+                            </p>
+                        </div>
+                        <div class="type-metric">clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem)</div>
+                    </div>
+
+                    <!-- Mono Metadata -->
+                    <div class="type-row">
+                        <div class="type-role">
+                            <span class="type-role-name">Mono · Metadados</span>
+                            <span class="type-font-info">IBM Plex Mono · Medium 500</span>
+                        </div>
+                        <div class="type-sample">
+                            <span class="badge" style="font-size: 0.72rem; letter-spacing: 0.08em;">
+                                <span class="badge-dot"></span>INDEPENDENT DIGITAL LAB · EXP. 001
+                            </span>
+                        </div>
+                        <div class="type-metric">clamp(0.7rem, 0.65rem + 0.25vw, 0.75rem)</div>
+                    </div>
+
+                    <!-- Button Action Label -->
+                    <div class="type-row">
+                        <div class="type-role">
+                            <span class="type-role-name">Button Label</span>
+                            <span class="type-font-info">Inter · SemiBold 600 (Uppercase)</span>
+                        </div>
+                        <div class="type-sample">
+                            <span style="font-family: var(--font-body); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-main);">
+                                EXPLORAR PORTFÓLIO ↗
+                            </span>
+                        </div>
+                        <div class="type-metric">0.85rem / 13.6px</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================================================================
+                 2. FUNDAÇÕES: CORES SEMÂNTICAS
+                 ================================================================ -->
+            <section id="colors" class="component-group">
+                <div class="group-header">
+                    <span class="group-eyebrow">Fundação 02</span>
+                    <h2 class="group-title">Cores Semânticas</h2>
+                    <p class="group-desc">Paleta oficial extraída do Manual AUVELOIR 1.0, organizada por função, contraste e superfície.</p>
+                </div>
+
+                <!-- Brand and Accent -->
+                <div class="color-subgroup">
+                    <h3 class="color-subgroup-title">Brand & Accent (Sinais Gráficos)</h3>
+                    <div class="color-grid">
+                        <div class="color-card">
+                            <div class="color-swatch-box" style="background: #C41632;"></div>
+                            <div class="color-details">
+                                <span class="color-label">Event Red</span>
+                                <span class="color-token">--primary / --color-event-red</span>
+                                <span class="color-hex">#C41632 · rgb(196, 22, 50)</span>
+                                <p class="color-use">Cor primária e assinatura gráfica AUVELOIR. Feixe de luz, acentos pontuais e ênfase.</p>
+                            </div>
+                        </div>
+
+                        <div class="color-card">
+                            <div class="color-swatch-box" style="background: #E01B3C;"></div>
+                            <div class="color-details">
+                                <span class="color-label">Event Red Hover</span>
+                                <span class="color-token">--primary-hover</span>
+                                <span class="color-hex">#E01B3C · rgb(224, 27, 60)</span>
+                                <p class="color-use">Estado de foco e interação elevada sobre botões e seletores primários.</p>
+                            </div>
+                        </div>
+
+                        <div class="color-card">
+                            <div class="color-swatch-box" style="background: rgba(196, 22, 50, 0.35);"></div>
+                            <div class="color-details">
+                                <span class="color-label">Primary Glow</span>
+                                <span class="color-token">--primary-glow</span>
+                                <span class="color-hex">rgba(196, 22, 50, 0.35)</span>
+                                <p class="color-use">Projeção de luz difusa em botões beam, bordas de cards e atmosferas de fundo.</p>
+                            </div>
+                        </div>
+
+                        <div class="color-card">
+                            <div class="color-swatch-box" style="background: rgba(196, 22, 50, 0.1);"></div>
+                            <div class="color-details">
+                                <span class="color-label">Primary Subtle</span>
+                                <span class="color-token">--primary-subtle</span>
+                                <span class="color-hex">rgba(196, 22, 50, 0.10)</span>
+                                <p class="color-use">Fundos de badges, tags de experimento e pílulas de categorização de status.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Surfaces -->
+                <div class="color-subgroup">
+                    <h3 class="color-subgroup-title">Superfícies & Canvas</h3>
+                    <div class="color-grid">
+                        <div class="color-card">
+                            <div class="color-swatch-box" style="background: #090B10; border: 1px solid rgba(255,255,255,0.1);"></div>
+                            <div class="color-details">
+                                <span class="color-label">Void Black</span>
+                                <span class="color-token">--bg-page / --color-void-black</span>
+                                <span class="color-hex">#090B10</span>
+                                <p class="color-use">Canvas absoluto de fundo de página. Proporciona alto contraste e imersão escura.</p>
+                            </div>
+                        </div>
+
+                        <div class="color-card">
+                            <div class="color-swatch-box" style="background: #14171E;"></div>
+                            <div class="color-details">
+                                <span class="color-label">Deep Surface</span>
+                                <span class="color-token">--bg-surface / --bg-card</span>
+                                <span class="color-hex">#14171E</span>
+                                <p class="color-use">Superfície táctil para painéis, miolos de botões beam e cards de primeiro nível.</p>
+                            </div>
+                        </div>
+
+                        <div class="color-card">
+                            <div class="color-swatch-box" style="background: #1C202A;"></div>
+                            <div class="color-details">
+                                <span class="color-label">Surface Hover</span>
+                                <span class="color-token">--bg-card-hover</span>
+                                <span class="color-hex">#1C202A</span>
+                                <p class="color-use">Superfície elevada em estado hover nos cards bento e depoimentos.</p>
+                            </div>
+                        </div>
+
+                        <div class="color-card">
+                            <div class="color-swatch-box" style="background: #06070A;"></div>
+                            <div class="color-details">
+                                <span class="color-label">Dark Backdrop</span>
+                                <span class="color-token">--bg-dark</span>
+                                <span class="color-hex">#06070A</span>
+                                <p class="color-use">Fundo de seções de alta densidade (Timeline e Laboratório de Experimentos).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text & Icons -->
+                <div class="color-subgroup">
+                    <h3 class="color-subgroup-title">Tipografia & Contraste (WCAG 2.2 AA)</h3>
+                    <div class="color-grid">
+                        <div class="color-card">
+                            <div class="color-swatch-box" style="background: #F0F1F3;"></div>
+                            <div class="color-details">
+                                <span class="color-label">Starlight (Alto Contraste)</span>
+                                <span class="color-token">--text-main / --color-starlight</span>
+                                <span class="color-hex">#F0F1F3 (Contraste 17.4:1)</span>
+                                <p class="color-use">Títulos, botões primários e cabeçalhos. Máxima nitidez ótica.</p>
+                            </div>
+                        </div>
+
+                        <div class="color-card">
+                            <div class="color-swatch-box" style="background: #A7ADBA;"></div>
+                            <div class="color-details">
+                                <span class="color-label">Signal Gray (Apoio e Leitura)</span>
+                                <span class="color-token">--text-secondary / --color-signal-gray</span>
+                                <span class="color-hex">#A7ADBA (Contraste 8.7:1)</span>
+                                <p class="color-use">Parágrafos, subtítulos e descrições técnicas.</p>
+                            </div>
+                        </div>
+
+                        <div class="color-card">
+                            <div class="color-swatch-box" style="background: #8E95A5;"></div>
+                            <div class="color-details">
+                                <span class="color-label">Archive Gray (Metadados)</span>
+                                <span class="color-token">--text-muted / --color-archive-gray</span>
+                                <span class="color-hex">#8E95A5 (Contraste 6.0:1)</span>
+                                <p class="color-use">Metadados secundários, copyright de rodapé e números de versão.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive States Table -->
+                <div class="color-subgroup">
+                    <h3 class="color-subgroup-title">Família de Estados Interativos</h3>
+                    <table class="states-table" role="table">
+                        <thead>
+                            <tr>
+                                <th>Estado</th>
+                                <th>Fundo / Superfície</th>
+                                <th>Borda</th>
+                                <th>Sombra / Efeito</th>
+                                <th>Uso Observado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="state-chip" style="background: rgba(255,255,255,0.06); color: #fff;">Default</span></td>
+                                <td><code>#14171E</code> (Deep Surface)</td>
+                                <td><code>rgba(167, 173, 186, 0.12)</code></td>
+                                <td><code>none / 0 20px 40px rgba(0,0,0,0.4)</code></td>
+                                <td>Repouso de cards e botões.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="state-chip" style="background: rgba(196,22,50,0.15); color: var(--primary);">Hover</span></td>
+                                <td><code>#1C202A</code> (Surface Hover)</td>
+                                <td><code>rgba(196, 22, 50, 0.45)</code></td>
+                                <td><code>translateY(-3px) + glow 0 15px 35px var(--primary-glow)</code></td>
+                                <td>Passagem do cursor em cards e botões.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="state-chip" style="background: rgba(196,22,50,0.3); color: #fff;">Active</span></td>
+                                <td><code>#090B10</code></td>
+                                <td><code>#C41632</code> (Event Red)</td>
+                                <td><code>scale(0.98)</code></td>
+                                <td>Clique e acionamento tátil.</td>
+                            </tr>
+                            <tr>
+                                <td><span class="state-chip" style="background: rgba(255,255,255,0.15); color: #fff;">Focus</span></td>
+                                <td>Preserva superfície</td>
+                                <td>Anel de 2px sólido</td>
+                                <td><code>outline: 2px solid var(--primary); outline-offset: 3px;</code></td>
+                                <td>Navegação acessível por teclado via Tab.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ================================================================
+                 3. FUNDAÇÕES: PLANOS DE FUNDO
+                 ================================================================ -->
+            <section id="backgrounds" class="component-group">
+                <div class="group-header">
+                    <span class="group-eyebrow">Fundação 03</span>
+                    <h2 class="group-title">Planos de Fundo</h2>
+                    <p class="group-desc">Amostras ao vivo de cada plano de fundo observado na Overview, preservando suas camadas, gradientes e ruído de granulação digital.</p>
+                </div>
+
+                <!-- Specimen 1: Void Black + Event Red Aura -->
+                <div class="bg-specimen-card" style="background: #090B10;">
+                    <div style="position: absolute; inset: 0; overflow: hidden; pointer-events: none;">
+                        <div class="aura-1" style="width: 300px; height: 300px; top: -50px; right: -50px;"></div>
+                        <div class="bg-noise"></div>
+                    </div>
+                    <div class="bg-specimen-info">
+                        <div class="bg-specimen-title">Atmosfera Void Black & Aura Event Red</div>
+                        <div class="bg-specimen-desc">.bg-aura-wrapper · .aura-1 · .bg-noise (Utilizado na Hero e Catálogo)</div>
+                    </div>
+                </div>
+
+                <!-- Specimen 2: Dot Matrix Field -->
+                <div class="bg-specimen-card" style="background: #06070A;">
+                    <div style="position: absolute; inset: 0; pointer-events: none;">
+                        <div class="dots-grid" style="position: absolute; inset: 0; background-image: radial-gradient(circle at 1.5px 1.5px, rgba(255, 255, 255, 0.05) 1px, transparent 0); background-size: 32px 32px;"></div>
+                        <div style="position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(196, 22, 50, 0.12) 0%, transparent 70%);"></div>
+                    </div>
+                    <div class="bg-specimen-info">
+                        <div class="bg-specimen-title">Matriz de Pontos & Vinheta Vermelha</div>
+                        <div class="bg-specimen-desc">.section-bg · .dots-grid (Utilizado na Linha do Tempo)</div>
+                    </div>
+                </div>
+
+                <!-- Specimen 3: Cyber Bento Atmosphere -->
+                <div class="bg-specimen-card" style="background: #090B10;">
+                    <div style="position: absolute; inset: 0; pointer-events: none;">
+                        <div style="position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(196, 22, 50, 0.04) 0%, transparent 70%);"></div>
+                        <div class="bg-noise" style="opacity: 0.04;"></div>
+                    </div>
+                    <div class="bg-specimen-info">
+                        <div class="bg-specimen-title">Atmosfera Bento Projetos</div>
+                        <div class="bg-specimen-desc">.proj-bg · Radial Focal Glow (Utilizado na Seção de Projetos)</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================================================================
+                 4. FUNDAÇÕES: SUPERFÍCIES & VIDRO
+                 ================================================================ -->
+            <section id="surfaces" class="component-group">
+                <div class="group-header">
+                    <span class="group-eyebrow">Fundação 04</span>
+                    <h2 class="group-title">Superfícies & Vidro</h2>
+                    <p class="group-desc">Superfícies táteis compostas por vidro fosco escuro (*dark glass*), desfoque gaussiano, bordas refratárias e sombras de elevação.</p>
+                </div>
+
+                <div class="surfaces-grid">
+                    <!-- Surface 1: Deep Surface Card -->
+                    <div class="surface-specimen-box" style="background: #14171E; border: 1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow-card);">
+                        <div>
+                            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--primary); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">SUPERFÍCIE 01</div>
+                            <h4 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: #fff;">Deep Surface</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.5;">Superfície pura sem desfoque. Utilizada na base de botões e cartões estáticos.</p>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 0.75rem; margin-top: 1.5rem;">
+                            background: #14171E · border: 1px solid var(--border)
+                        </div>
+                    </div>
+
+                    <!-- Surface 2: Glassmorphism Blur -->
+                    <div class="surface-specimen-box" style="background: rgba(20, 23, 30, 0.7); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow-card);">
+                        <div>
+                            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--primary); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">SUPERFÍCIE 02</div>
+                            <h4 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: #fff;">Glassmorphism Timeline</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.5;">Vidro fumê com desfoque de 14px e borda reflexiva. Utilizada na Linha do Tempo.</p>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 0.75rem; margin-top: 1.5rem;">
+                            backdrop-filter: blur(14px) · rgba(20, 23, 30, 0.7)
+                        </div>
+                    </div>
+
+                    <!-- Surface 3: Testimonial Heavy Glass -->
+                    <div class="surface-specimen-box" style="background: rgba(20, 23, 30, 0.7); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); border: 1px solid var(--border); border-top: 2px solid var(--primary-border); border-radius: var(--radius-xl); box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.02), var(--shadow-card);">
+                        <div>
+                            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--primary); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem;">SUPERFÍCIE 03</div>
+                            <h4 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: #fff;">Kinetic Prismatic Glass</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.4rem; line-height: 1.5;">Vidro de alta saturação com borda superior vermelha e brilho interno.</p>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 0.75rem; margin-top: 1.5rem;">
+                            backdrop-filter: blur(20px) saturate(160%)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================================================================
+                 5. FUNDAÇÕES: ÍCONES & SÍMBOLOS
+                 ================================================================ -->
+            <section id="icons" class="component-group">
+                <div class="group-header">
+                    <span class="group-eyebrow">Fundação 05</span>
+                    <h2 class="group-title">Ícones & Símbolos</h2>
+                    <p class="group-desc">Símbolos e glifos originais utilizados na marca, nas tecnologias e nos cards de projetos.</p>
+                </div>
+
+                <div class="icons-catalog-grid">
+                    <!-- 1. AUVELOIR Logo -->
+                    <div class="icon-specimen-item">
+                        <div class="icon-display-frame">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="34" height="34" role="img" aria-label="AUVELOIR">
+                                <path d="M48.85298 17.85867 A22 22 0 1 0 53.25037 37.69402" stroke="#F0F1F3" stroke-width="4.2" fill="none" stroke-linecap="round"/>
+                                <circle cx="53.47851" cy="27.23833" r="4.2" fill="#C41632"/>
+                            </svg>
+                        </div>
+                        <span class="icon-id">AUVELOIR Symbol</span>
+                    </div>
+
+                    <!-- 2. Python -->
+                    <div class="icon-specimen-item">
+                        <div class="icon-display-frame">
+                            <span class="iconify" data-icon="logos:python" style="font-size: 32px;"></span>
+                        </div>
+                        <span class="icon-id">logos:python</span>
+                    </div>
+
+                    <!-- 3. PostgreSQL -->
+                    <div class="icon-specimen-item">
+                        <div class="icon-display-frame">
+                            <span class="iconify" data-icon="logos:postgresql" style="font-size: 32px;"></span>
+                        </div>
+                        <span class="icon-id">logos:postgresql</span>
+                    </div>
+
+                    <!-- 4. Tableau -->
+                    <div class="icon-specimen-item">
+                        <div class="icon-display-frame">
+                            <span class="iconify" data-icon="logos:tableau-icon" style="font-size: 32px;"></span>
+                        </div>
+                        <span class="icon-id">logos:tableau-icon</span>
+                    </div>
+
+                    <!-- 5. Power BI -->
+                    <div class="icon-specimen-item">
+                        <div class="icon-display-frame">
+                            <span class="iconify" data-icon="logos:microsoft-power-bi" style="font-size: 32px;"></span>
+                        </div>
+                        <span class="icon-id">microsoft-power-bi</span>
+                    </div>
+
+                    <!-- 6. Nubank -->
+                    <div class="icon-specimen-item">
+                        <div class="icon-display-frame">
+                            <span class="iconify" data-icon="simple-icons:nubank" style="color: #820ad1; font-size: 30px;"></span>
+                        </div>
+                        <span class="icon-id">simple-icons:nubank</span>
+                    </div>
+
+                    <!-- 7. Google -->
+                    <div class="icon-specimen-item">
+                        <div class="icon-display-frame">
+                            <span class="iconify" data-icon="logos:google-icon" style="font-size: 30px;"></span>
+                        </div>
+                        <span class="icon-id">logos:google-icon</span>
+                    </div>
+
+                    <!-- 8. Asimov Academy -->
+                    <div class="icon-specimen-item">
+                        <div class="icon-display-frame">
+                            <img src="../overview/assets/asimov-logo.png" alt="Asimov" style="width: 32px; height: 32px; object-fit: contain;">
+                        </div>
+                        <span class="icon-id">assets/asimov-logo</span>
+                    </div>
+
+                    <!-- 9. Lucide Arrow -->
+                    <div class="icon-specimen-item">
+                        <div class="icon-display-frame">
+                            <i data-lucide="arrow-up-right" style="width: 30px; height: 30px; color: var(--primary);"></i>
+                        </div>
+                        <span class="icon-id">lucide:arrow-up-right</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================================================================
+                 6. COMPONENTES: AÇÕES & BOTÕES
+                 ================================================================ -->
+            <section id="actions" class="component-group">
+                <div class="group-header">
+                    <span class="group-eyebrow">Componente 01</span>
+                    <h2 class="group-title">Ações & Botões</h2>
+                    <p class="group-desc">Botões interativos com o efeito característico de feixe cônico em rotação perimétrica (*perimeter beam*) e glow difuso em Event Red.</p>
+                </div>
+
+                <!-- Specimen: Hero Beam Button -->
+                <div class="specimen-section">
+                    <div class="specimen-meta-bar">
+                        <span class="specimen-title">Botão Primário de Feixe (Hero)</span>
+                        <code class="specimen-code-tag">.btn-beam</code>
+                    </div>
+                    <div class="specimen-live-container">
+                        <a href="#demo" class="btn-beam" onclick="return false;">
+                            <div class="beam-border"></div>
+                            <div class="btn-content-bg">
+                                <div class="bottom-glow"></div>
+                            </div>
+                            <span style="position: relative; z-index: 10; display: flex; align-items: center;">
+                                Explorar Portfólio
+                                <i data-lucide="arrow-up-right" style="margin-left: 0.6rem; width: 1.1rem; height: 1.1rem;"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Specimen: Large CTA Beam Button -->
+                <div class="specimen-section">
+                    <div class="specimen-meta-bar">
+                        <span class="specimen-title">Botão de Ação Larga (Final CTA)</span>
+                        <code class="specimen-code-tag">.btn-beam.cta-large</code>
+                    </div>
+                    <div class="specimen-live-container">
+                        <a href="#demo" class="btn-beam cta-large" onclick="return false;">
+                            <div class="beam-border"></div>
+                            <div class="btn-content-bg">
+                                <div class="bottom-glow"></div>
+                            </div>
+                            <span style="position: relative; z-index: 10; display: flex; align-items: center; justify-content: center; gap: 0.6rem;">
+                                Iniciar uma Conversa
+                                <i data-lucide="arrow-up-right" style="width: 1.2rem; height: 1.2rem;"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Specimen: Nav Accent & Secondary -->
+                <div class="specimen-section">
+                    <div class="specimen-meta-bar">
+                        <span class="specimen-title">Botão de Acento e Link Secundário</span>
+                        <code class="specimen-code-tag">.btn-nav-accent · .btn-secondary</code>
+                    </div>
+                    <div class="specimen-live-container" style="gap: 3rem;">
+                        <a href="#demo" class="btn-nav-accent" onclick="return false;">
+                            Iniciar Projeto
+                        </a>
+                        <a href="#demo" class="btn-secondary" onclick="return false;">
+                            Ver Todos os Cases
+                            <i data-lucide="arrow-right" style="width: 1rem; height: 1rem;"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================================================================
+                 7. COMPONENTES: NAVEGAÇÃO & RODAPÉ
+                 ================================================================ -->
+            <section id="navigation" class="component-group">
+                <div class="group-header">
+                    <span class="group-eyebrow">Componente 02</span>
+                    <h2 class="group-title">Navegação & Rodapé</h2>
+                    <p class="group-desc">Estruturas de ancoragem do site: barra de navegação suspensa em vidro e rodapé semântico de metadados.</p>
+                </div>
+
+                <!-- Specimen: Glass Nav -->
+                <div class="specimen-section">
+                    <div class="specimen-meta-bar">
+                        <span class="specimen-title">Barra Suspensa de Navegação</span>
+                        <code class="specimen-code-tag">.glass-nav</code>
+                    </div>
+                    <div class="specimen-live-container" style="padding: 4rem 1.5rem;">
+                        <div class="glass-nav" style="position: relative; top: auto; width: 100%; max-width: 900px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                            <a href="#" style="display: flex; align-items: center; gap: 0.85rem; text-decoration: none;" onclick="return false;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="28" height="28" role="img" aria-label="AUVELOIR">
+                                    <path d="M48.85298 17.85867 A22 22 0 1 0 53.25037 37.69402" stroke="#F0F1F3" stroke-width="4.2" fill="none" stroke-linecap="round"/>
+                                    <circle cx="53.47851" cy="27.23833" r="4.2" fill="#C41632"/>
+                                </svg>
+                                <span style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em;">AUVELOIR</span>
+                            </a>
+                            <div class="nav-links" style="position: static; transform: none; display: flex; gap: 2rem;">
+                                <a href="#about" onclick="return false;">Resumo</a>
+                                <a href="#projects" onclick="return false;">Projetos</a>
+                                <a href="#contact" onclick="return false;">Contato</a>
+                            </div>
+                            <a href="#contact" class="btn-nav-accent" onclick="return false;">
+                                Iniciar Projeto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specimen: Site Footer -->
+                <div class="specimen-section">
+                    <div class="specimen-meta-bar">
+                        <span class="specimen-title">Rodapé Semântico</span>
+                        <code class="specimen-code-tag">.site-footer</code>
+                    </div>
+                    <div class="specimen-live-container" style="padding: 0; background: transparent; border: none;">
+                        <footer class="site-footer" style="width: 100%; border-radius: var(--radius-xl); border: 1px solid var(--border);">
+                            <div class="container footer-content">
+                                <div class="footer-brand">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="22" height="22">
+                                        <path d="M48.85298 17.85867 A22 22 0 1 0 53.25037 37.69402" stroke="#F0F1F3" stroke-width="4.2" fill="none" stroke-linecap="round"/>
+                                        <circle cx="53.47851" cy="27.23833" r="4.2" fill="#C41632"/>
+                                    </svg>
+                                    <span class="footer-logo">AUVELOIR</span>
+                                    <span style="color: var(--text-muted); font-size: 0.8rem;">· MELLO Digital Lab</span>
+                                </div>
+                                <div class="footer-meta">
+                                    <span>DESIGN SYSTEM v1.0</span>
+                                    <span class="status-indicator"><span class="status-dot"></span>OPERACIONAL</span>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================================================================
+                 8. COMPONENTES: BADGES & STATUS
+                 ================================================================ -->
+            <section id="badges" class="component-group">
+                <div class="group-header">
+                    <span class="group-eyebrow">Componente 03</span>
+                    <h2 class="group-title">Badges & Status</h2>
+                    <p class="group-desc">Indicadores visuais de estado, experiência e metadados de sistema.</p>
+                </div>
+
+                <div class="specimen-section">
+                    <div class="specimen-meta-bar">
+                        <span class="specimen-title">Família de Indicadores e Pílulas</span>
+                        <code class="specimen-code-tag">.badge · .status-indicator · .lock-chip</code>
+                    </div>
+                    <div class="specimen-live-container" style="gap: 2.5rem; flex-wrap: wrap;">
+                        <div class="badge">
+                            <span class="badge-dot"></span>INDEPENDENT DIGITAL LAB · EXP. 001
+                        </div>
+
+                        <div style="padding: 0.35rem 0.85rem; border-radius: 9999px; background: rgba(196, 22, 50, 0.08); border: 1px solid var(--primary-border); font-family: var(--font-mono); font-size: 0.72rem; color: var(--primary); letter-spacing: 0.08em;">
+                            ÁREA RESERVADA · IDENTIDADE VISUAL
+                        </div>
+
+                        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.3rem 0.75rem; border-radius: 4px; font-weight: 500;">
+                            BUILD · EXP. 001
+                        </div>
+
+                        <div class="status-indicator">
+                            <span class="status-dot"></span>SISTEMA OPERACIONAL
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================================================================
+                 9. COMPONENTES: CARDS & CONTAINERS
+                 ================================================================ -->
+            <section id="cards" class="component-group">
+                <div class="group-header">
+                    <span class="group-eyebrow">Componente 04</span>
+                    <h2 class="group-title">Cards & Containers</h2>
+                    <p class="group-desc">Contêineres de conteúdo com 3D tilt, rastreamento de lanterna no mouse e geometria assimétrica.</p>
+                </div>
+
+                <!-- Specimen: Project Bento Card -->
+                <div class="specimen-section">
+                    <div class="specimen-meta-bar">
+                        <span class="specimen-title">Card Bento de Projeto (Com 3D Tilt & Lanterna)</span>
+                        <code class="specimen-code-tag">.project-card</code>
+                    </div>
+                    <div class="specimen-live-container" style="padding: 3rem 1.5rem;">
+                        <div class="project-card" style="width: 100%; max-width: 600px; aspect-ratio: 16 / 10; opacity: 1; transform: none;" data-tilt-active="true">
+                            <div class="project-inner-grid"></div>
+                            <div class="project-img-wrapper">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200" alt="Dashboard">
+                            </div>
+                            <div class="project-info">
+                                <div class="project-meta">
+                                    <span class="company">Nubank</span>
+                                    <span class="year">2021</span>
+                                </div>
+                                <h3 class="project-title">Dashboard<br>comercial</h3>
+                                <p class="project-desc">Centralizou métricas de vendas e inadimplência em um painel único.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specimen: Geometric Crest Showcase -->
+                <div class="specimen-section">
+                    <div class="specimen-meta-bar">
+                        <span class="specimen-title">Mostrador Geométrico Hero (Substituto de Foto)</span>
+                        <code class="specimen-code-tag">.hero-image-wrapper</code>
+                    </div>
+                    <div class="specimen-live-container">
+                        <div class="hero-image-wrapper" style="max-width: 380px;">
+                            <div style="position: relative; width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100" height="100" role="img" aria-label="AUVELOIR">
+                                    <path d="M48.85298 17.85867 A22 22 0 1 0 53.25037 37.69402" stroke="#F0F1F3" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+                                    <circle cx="53.47851" cy="27.23833" r="3.2" fill="#C41632"/>
+                                </svg>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--text-main); letter-spacing: 0.08em;">AUVELOIR</div>
+                                <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-secondary); letter-spacing: 0.15em; margin-top: 0.25rem;">DIGITAL LAB · MELLO</div>
+                                <div style="display: inline-block; margin-top: 1.25rem; padding: 0.3rem 0.85rem; border-radius: 9999px; background: rgba(196, 22, 50, 0.08); border: 1px solid var(--primary-border); font-family: var(--font-mono); font-size: 0.7rem; color: var(--primary); letter-spacing: 0.08em;">
+                                    ÁREA RESERVADA · IDENTIDADE VISUAL
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================================================================
+                 10. COMPONENTES: LINHA DO TEMPO
+                 ================================================================ -->
+            <section id="timeline" class="component-group">
+                <div class="group-header">
+                    <span class="group-eyebrow">Componente 05</span>
+                    <h2 class="group-title">Linha do Tempo</h2>
+                    <p class="group-desc">Estrutura cronológica com ponto focal em Event Red, logotipo corporativo e card de vidro fosco.</p>
+                </div>
+
+                <div class="specimen-section">
+                    <div class="specimen-meta-bar">
+                        <span class="specimen-title">Item de Linha do Tempo</span>
+                        <code class="specimen-code-tag">.timeline-card-glass</code>
+                    </div>
+                    <div class="specimen-live-container">
+                        <div class="timeline-card-glass" style="max-width: 480px;">
+                            <div class="company-header">
+                                <div class="company-logo">
+                                    <span class="iconify" data-icon="logos:google-icon" style="font-size: 26px;"></span>
+                                </div>
+                                <h3 class="company-name">Google</h3>
+                            </div>
+                            <p class="job-desc">
+                                Integrou o time de analytics de produto. Trabalhou com métricas de engajamento e retenção, desenvolvendo modelos preditivos usados por squads de produto globais.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================================================================
+                 11. COMPONENTES: MOVIMENTO & MARQUEE
+                 ================================================================ -->
+            <section id="kinetic" class="component-group">
+                <div class="group-header">
+                    <span class="group-eyebrow">Componente 06</span>
+                    <h2 class="group-title">Movimento & Marquee</h2>
+                    <p class="group-desc">Faixa cinética horizontal contínua de 45 segundos, com pausa ao hover e cartões de experimento.</p>
+                </div>
+
+                <div class="specimen-section">
+                    <div class="specimen-meta-bar">
+                        <span class="specimen-title">Faixa Marquee em Loop Contínuo</span>
+                        <code class="specimen-code-tag">.marquee-container · .marquee-content</code>
+                    </div>
+                    <div class="specimen-live-container" style="padding: 2rem 0; overflow: hidden;">
+                        <div class="marquee-container" style="padding: 1.5rem 0;">
+                            <div class="marquee-content">
+                                <!-- Card 1 -->
+                                <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">BUILD · EXP. 001</span>
+                                        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: CONCLUÍDO</span>
+                                    </div>
+                                    <p class="testimonial-text">
+                                        <strong>Engenharia Reversa de UI & Design Systems:</strong> Extração e decomposição sistemática de interfaces visuais para HTML/CSS estáticos puros com fidelidade total.
+                                    </p>
+                                    <div class="testimonial-author" style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1.5rem;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32">
+                                            <path d="M48.85298 17.85867 A22 22 0 1 0 53.25037 37.69402" stroke="#F0F1F3" stroke-width="4.2" fill="none" stroke-linecap="round"/>
+                                            <circle cx="53.47851" cy="27.23833" r="4.2" fill="#C41632"/>
+                                        </svg>
+                                        <div class="author-info">
+                                            <span class="author-name">Arquitetura de Front-end</span>
+                                            <span class="author-role">Sistemas Modulares</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 2 -->
+                                <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">EXPLORE · EXP. 002</span>
+                                        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: ATIVO</span>
+                                    </div>
+                                    <p class="testimonial-text">
+                                        <strong>Automação & Agentes de IA:</strong> Criação de fluxos autônomos orientados por LLMs para geração estruturada e transcrição criativa.
+                                    </p>
+                                    <div class="testimonial-author" style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1.5rem;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32">
+                                            <path d="M48.85298 17.85867 A22 22 0 1 0 53.25037 37.69402" stroke="#F0F1F3" stroke-width="4.2" fill="none" stroke-linecap="round"/>
+                                            <circle cx="53.47851" cy="27.23833" r="4.2" fill="#C41632"/>
+                                        </svg>
+                                        <div class="author-info">
+                                            <span class="author-name">Sistemas Autônomos</span>
+                                            <span class="author-role">Agentic Pipelines</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Loop Duplicate -->
+                                <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">BUILD · EXP. 001</span>
+                                        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: CONCLUÍDO</span>
+                                    </div>
+                                    <p class="testimonial-text">
+                                        <strong>Engenharia Reversa de UI & Design Systems:</strong> Extração e decomposição sistemática de interfaces visuais para HTML/CSS estáticos puros com fidelidade total.
+                                    </p>
+                                    <div class="testimonial-author" style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1.5rem;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32">
+                                            <path d="M48.85298 17.85867 A22 22 0 1 0 53.25037 37.69402" stroke="#F0F1F3" stroke-width="4.2" fill="none" stroke-linecap="round"/>
+                                            <circle cx="53.47851" cy="27.23833" r="4.2" fill="#C41632"/>
+                                        </svg>
+                                        <div class="author-info">
+                                            <span class="author-name">Arquitetura de Front-end</span>
+                                            <span class="author-role">Sistemas Modulares</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Scripts de Interatividade -->
+    <script>
+        lucide.createIcons();
+
+        // 3D Tilt e Flashlight nos cards de espécime
+        const handleOnMouseMove = e => {
+            const { currentTarget: target } = e;
+            const rect = target.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+
+            target.style.setProperty("--mouse-x", `${x}px`);
+            target.style.setProperty("--mouse-y", `${y}px`);
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -8;
+            const rotateY = ((x - centerX) / centerX) * 8;
+
+            target.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        };
+
+        const handleMouseLeave = e => {
+            const { currentTarget: target } = e;
+            target.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+        };
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReducedMotion) {
+            document.querySelectorAll(".project-card").forEach(card => {
+                card.addEventListener('mousemove', handleOnMouseMove);
+                card.addEventListener('mouseleave', handleMouseLeave);
+            });
+        }
+
+        // Active link tracking na Sidebar ao rolar a página
+        const sections = document.querySelectorAll(".component-group");
+        const navLinks = document.querySelectorAll(".sidebar-link");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${current}`) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

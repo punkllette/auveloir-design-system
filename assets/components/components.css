@@ -1,0 +1,502 @@
+/* ==========================================================================
+   AUVELOIR / MELLO DESIGN SYSTEM — CATALOG OF COMPONENTS (FASE 2)
+   Fonte Única de Verdade: Baseada 100% no Overview Aprovado
+   ========================================================================== */
+
+/* Layout Geral do Catálogo */
+.components-layout {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+  padding: 5.5rem clamp(1.5rem, 4vw, 4rem) 4rem;
+  gap: 3.5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Sidebar Fixa à Esquerda */
+.components-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 2rem;
+  height: calc(100vh - 4rem);
+  overflow-y: auto;
+  padding-right: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(167, 173, 186, 0.2) transparent;
+}
+
+.components-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+.components-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(167, 173, 186, 0.2);
+  border-radius: 4px;
+}
+
+.sidebar-category {
+  margin-bottom: 2rem;
+}
+
+.sidebar-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebar-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+.sidebar-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sidebar-link {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  border-left: 2px solid transparent;
+}
+
+.sidebar-link:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateX(3px);
+}
+
+.sidebar-link.active {
+  color: var(--text-main);
+  background: rgba(var(--primary-rgb), 0.1);
+  border-left-color: var(--primary);
+  font-weight: 500;
+}
+
+/* Área Principal de Conteúdo */
+.components-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding-bottom: 8rem;
+}
+
+/* Grupos & Seções */
+.component-group {
+  position: relative;
+  scroll-margin-top: 3rem;
+}
+
+.group-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.25rem;
+}
+
+.group-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--primary);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.group-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: var(--tracking-tight);
+}
+
+.group-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-top: 0.4rem;
+  font-weight: 300;
+  max-width: 800px;
+}
+
+/* --------------------------------------------------------------------------
+   1. TYPOGRAPHY SPECIMENS (Tabela de 3 Colunas Alinhadas)
+   -------------------------------------------------------------------------- */
+.type-table {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+.type-row {
+  display: grid;
+  grid-template-columns: 240px 1fr 200px;
+  align-items: baseline;
+  gap: 2rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.type-row:last-child {
+  border-bottom: none;
+}
+
+.type-role {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.type-role-name {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.type-font-info {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.type-sample {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.type-metric {
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+/* --------------------------------------------------------------------------
+   2. COLOR SWATCHES & FAMILIES
+   -------------------------------------------------------------------------- */
+.color-subgroup {
+  margin-bottom: 3rem;
+}
+
+.color-subgroup-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.color-card {
+  background: rgba(20, 23, 30, 0.75);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+}
+
+.color-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.color-swatch-box {
+  height: 90px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.color-details {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.color-label {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text-main);
+}
+
+.color-token {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--primary);
+  letter-spacing: 0.04em;
+}
+
+.color-hex {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.color-use {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-top: 0.35rem;
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+/* Interative States Family */
+.states-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(20, 23, 30, 0.6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.states-table th, .states-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.states-table th {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.states-table td {
+  font-size: 0.85rem;
+}
+
+.state-chip {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   3. BACKGROUNDS & SURFACES SPECIMENS
+   -------------------------------------------------------------------------- */
+.bg-specimen-card {
+  position: relative;
+  height: 240px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.bg-specimen-info {
+  position: relative;
+  z-index: 10;
+  background: rgba(9, 11, 16, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.bg-specimen-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.bg-specimen-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+  font-family: var(--font-mono);
+}
+
+/* Surfaces Grid */
+.surfaces-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.surface-specimen-box {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+}
+
+/* --------------------------------------------------------------------------
+   4. ICONS SPECIMEN GRID (5 per row)
+   -------------------------------------------------------------------------- */
+.icons-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1.5rem;
+}
+
+.icon-specimen-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.75rem 1rem;
+  background: rgba(20, 23, 30, 0.5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.icon-specimen-item:hover {
+  border-color: var(--primary);
+  background: rgba(20, 23, 30, 0.9);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -5px var(--primary-glow);
+}
+
+.icon-display-frame {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.icon-display-frame svg, .icon-display-frame .iconify {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-id {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-align: center;
+  word-break: break-all;
+}
+
+/* --------------------------------------------------------------------------
+   5. COMPLETE COMPONENT SPECIMEN WRAPPERS
+   -------------------------------------------------------------------------- */
+.specimen-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.specimen-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.specimen-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.specimen-code-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--primary);
+  background: rgba(var(--primary-rgb), 0.08);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--primary-border);
+}
+
+.specimen-live-container {
+  position: relative;
+  width: 100%;
+  padding: 2.5rem;
+  background: rgba(14, 17, 24, 0.5);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .components-layout {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  .components-sidebar {
+    width: 100%;
+    position: static;
+    height: auto;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+  }
+  .sidebar-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .type-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .type-metric {
+    text-align: left;
+  }
+}

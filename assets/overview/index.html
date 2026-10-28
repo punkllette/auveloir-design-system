@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AUVELOIR — Design System & Portfolio</title>
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+
+    <link rel="stylesheet" href="fonts.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Scripts -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="glass-nav animate-fade-up">
+
+        <a href="#" style="display: flex; align-items: center; gap: 0.85rem; text-decoration: none;">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="30" height="30" role="img" aria-label="AUVELOIR">
+
+                <path d="M48.85298 17.85867 A22 22 0 1 0 53.25037 37.69402" stroke="#F0F1F3" stroke-width="4.2" fill="none" stroke-linecap="round"/>
+
+                <circle cx="53.47851" cy="27.23833" r="4.2" fill="#C41632"/>
+
+            </svg>
+
+            <span style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em;">AUVELOIR</span>
+
+        </a>
+
+        <div class="nav-links">
+
+            <a href="#about">Resumo</a>
+
+            <a href="#projects">Projetos</a>
+
+            <a href="#contact">Contato</a>
+
+        </div>
+
+        <a href="#contact" class="btn-nav-accent">
+
+            Iniciar Projeto
+
+        </a>
+
+    </nav>
+
+
+
+    <header class="hero-section hero" id="hero">
+
+        <!-- Atmosfera de fundo Void Black com iluminação Event Red contida -->
+
+        <div class="bg-aura-wrapper" aria-hidden="true">
+
+            <div class="aura aura-1"></div>
+
+            <div class="bg-noise"></div>
+
+        </div>
+
+
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <!-- Coluna Editorial: Apresentação e Posicionamento -->
+
+                <div class="hero-text">
+
+                    <!-- 1. Identificação e Descrição do Estúdio -->
+
+                    <div class="studio-badge animate-blur-in delay-100">
+
+                        <span class="badge-dot" aria-hidden="true"></span>
+
+                        <span class="studio-name">MELLO</span>
+
+                        <span class="studio-divider">/</span>
+
+                        <span class="studio-desc">Estúdio digital independente</span>
+
+                    </div>
+
+
+
+                    <!-- 2. Título Principal em Duas Linhas Limpas -->
+
+                    <h1 class="headline animate-blur-in delay-200">
+
+                        Presença digital<br>
+
+                        <span>à altura do que você faz.</span>
+
+                    </h1>
+
+
+
+                    <!-- 3. Texto de Apoio Enxuto e Elegante -->
+
+                    <p class="subheadline animate-fade-up delay-200">
+
+                        Sou Mello. Crio sites e experiências digitais com foco em design autoral, funcionalidade e performance.
+
+                    </p>
+
+
+
+                    <!-- 4. Ação Principal de Maior Destaque -->
+
+                    <div class="cta-group animate-fade-up delay-300">
+
+                        <a href="#projects" class="btn-beam">
+
+                            <div class="beam-border" aria-hidden="true"></div>
+
+                            <div class="btn-content-bg" aria-hidden="true">
+
+                                <div class="bottom-glow"></div>
+
+                            </div>
+
+                            <span style="position: relative; z-index: 10; display: flex; align-items: center;">
+
+                                Explorar Portfólio
+
+                                <i data-lucide="arrow-up-right" style="margin-left: 0.6rem; width: 1.1rem; height: 1.1rem;" aria-hidden="true"></i>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- 5. Assinatura Complementar Discreta -->
+
+                    <div class="hero-signature animate-fade-up delay-300">
+
+                        Design · Desenvolvimento · Experiências digitais
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Coluna Direita: Elemento Visual Autoral com Ícones Flutuantes ao Redor (Igual ao Original) -->
+
+                <div class="hero-visual-column animate-blur-in delay-200">
+
+                    <div class="image-glow" aria-hidden="true"></div>
+
+                    
+
+                    <!-- Ícones de Ferramentas Flutuando em Volta do Card -->
+
+                    <div class="tool-icon animate-float" style="top: 6%; left: 0; animation-duration: 7s;" title="JavaScript">
+
+                        <span class="iconify" data-icon="logos:javascript" aria-hidden="true"></span>
+
+                    </div>
+
+                    <div class="tool-icon animate-float" style="top: 16%; right: -6%; animation-duration: 5s; animation-delay: 1s;" title="CSS3">
+
+                        <span class="iconify" data-icon="logos:css-3" aria-hidden="true"></span>
+
+                    </div>
+
+                    <div class="tool-icon animate-float" style="bottom: 12%; left: -6%; animation-duration: 8s; animation-delay: 2s;" title="Python">
+
+                        <span class="iconify" data-icon="logos:python" aria-hidden="true"></span>
+
+                    </div>
+
+                    <div class="tool-icon animate-float" style="bottom: 22%; right: -8%; animation-duration: 6s; animation-delay: 0.5s;" title="Microsoft Power BI">
+
+                        <span class="iconify" data-icon="logos:microsoft-power-bi" aria-hidden="true"></span>
+
+                    </div>
+
+
+
+                    <div class="architectural-crest animate-float" aria-hidden="true">
+
+                        <svg viewBox="0 0 400 400" class="crest-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                            <!-- Grade de Coordenadas de Precisão Arquitetônica -->
+
+                            <circle cx="200" cy="200" r="160" stroke="#A7ADBA" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 4"/>
+
+                            <circle cx="200" cy="200" r="115" stroke="#F0F1F3" stroke-opacity="0.18" stroke-width="1.2"/>
+
+                            <line x1="200" y1="20" x2="200" y2="380" stroke="#A7ADBA" stroke-opacity="0.08" stroke-width="1"/>
+
+                            <line x1="20" y1="200" x2="380" y2="200" stroke="#A7ADBA" stroke-opacity="0.08" stroke-width="1"/>
+
+                            
+
+                            <!-- Traçado Principal da Marca MELLO -->
+
+                            <path d="M140 255 V160 L200 215 L260 160 V255" stroke="#F0F1F3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                            <circle cx="200" cy="140" r="5" fill="#C41632"/>
+
+                            
+
+                            <!-- Pontos de Ancoragem Técnica em Event Red -->
+
+                            <circle cx="260" cy="160" r="3.5" fill="#C41632"/>
+
+                        </svg>
+
+
+
+                        <div class="crest-caption">
+
+                            <span class="crest-brand">MELLO</span>
+
+                            <span class="crest-coords">ESTÚDIO DIGITAL · WEB DESIGN</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+        <!-- Seção 2: Trajetória (Estrutura Original da Timeline) -->
+
+        <section class="experience-section" id="about">
+
+            <div class="section-bg">
+
+                <div class="dots-grid"></div>
+
+            </div>
+
+
+
+            <div class="timeline-outer">
+
+                <div style="text-align: center; margin-bottom: 1.25rem;">
+
+                    <div class="badge" style="font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;">
+
+                        <span class="badge-dot" style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#C41632; margin-right:8px;"></span>
+
+                        TRAJETÓRIA
+
+                    </div>
+
+                </div>
+
+
+
+                <h2 class="headline timeline-heading" style="text-align: center; margin-bottom: 1.25rem; max-width: 950px; margin-inline: auto;">
+
+                    Da logística e análise de dados à <span>construção de experiências digitais.</span>
+
+                </h2>
+
+
+
+                <p style="text-align: center; color: var(--text-secondary); max-width: 680px; margin: 0 auto clamp(3.5rem, 6vw, 5.5rem); font-size: 1.05rem; line-height: 1.6;">
+
+                    Minha trajetória começou na logística, passou pela análise de dados e hoje ganha forma no design e no desenvolvimento web.
+
+                </p>
+
+
+
+                <div class="timeline-body" style="position: relative;">
+
+                    <div class="timeline-v-line"></div>
+
+                    <div class="timeline-v-progress" id="timeline-progress-v"></div>
+
+
+
+                    <!-- Item 1: Amazon (2025) -->
+
+                    <div class="timeline-item-wrapper">
+
+                        <div class="timeline-v-dot"></div>
+
+                        <div class="timeline-item-content">
+
+                            <span class="timeline-v-year">2025</span>
+
+                            <div class="timeline-card-glass">
+
+                                <div class="company-header">
+
+                                    <div class="company-logo">
+
+                                        <span class="iconify" data-icon="simple-icons:amazon" style="color: #FF9900; font-size: 26px;"></span>
+
+                                    </div>
+
+                                    <div>
+
+                                        <h3 class="company-name">Amazon</h3>
+
+                                        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--primary); letter-spacing: 0.05em; margin-top: 0.2rem;">Assistente Operacional I</div>
+
+                                    </div>
+
+                                </div>
+
+                                <p class="job-desc">
+
+                                    Atuação na área de logística. Experiência de base em operações, organização de fluxo e rigor em processos de alta demanda.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Item 2: Shopee (2026) -->
+
+                    <div class="timeline-item-wrapper">
+
+                        <div class="timeline-v-dot"></div>
+
+                        <div class="timeline-item-content">
+
+                            <span class="timeline-v-year">2026</span>
+
+                            <div class="timeline-card-glass">
+
+                                <div class="company-header">
+
+                                    <div class="company-logo">
+
+                                        <span class="iconify" data-icon="simple-icons:shopee" style="color: #EE4D2D; font-size: 26px;"></span>
+
+                                    </div>
+
+                                    <div>
+
+                                        <h3 class="company-name">Shopee</h3>
+
+                                        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--primary); letter-spacing: 0.05em; margin-top: 0.2rem;">Analista Júnior</div>
+
+                                    </div>
+
+                                </div>
+
+                                <p class="job-desc">
+
+                                    Atuação com análise de dados e rotinas analíticas, com uso diário e intensivo de Google Workspace, com foco em Google Planilhas.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Item 3: Multivix & AUVELOIR (2026 / Atual) -->
+
+                    <div class="timeline-item-wrapper">
+
+                        <div class="timeline-v-dot"></div>
+
+                        <div class="timeline-item-content">
+
+                            <span class="timeline-v-year">Atual</span>
+
+                            <div class="timeline-card-glass" style="border-top: 2px solid var(--primary-border);">
+
+                                <div class="company-header">
+
+                                    <div class="company-logo">
+
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="28" height="28" role="img" aria-label="AUVELOIR">
+
+                                            <path d="M48.85298 17.85867 A22 22 0 1 0 53.25037 37.69402" stroke="#F0F1F3" stroke-width="4.2" fill="none" stroke-linecap="round"/>
+
+                                            <circle cx="53.47851" cy="27.23833" r="4.2" fill="#C41632"/>
+
+                                        </svg>
+
+                                    </div>
+
+                                    <div>
+
+                                        <h3 class="company-name">AUVELOIR · Multivix</h3>
+
+                                        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--primary); letter-spacing: 0.05em; margin-top: 0.2rem;">Fundador · Graduando em ADS</div>
+
+                                    </div>
+
+                                </div>
+
+                                <p class="job-desc">
+
+                                    Graduação em Análise e Desenvolvimento de Sistemas na Multivix (1º período, 2026) e fundação da AUVELOIR, minha agência digital independente em construção.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Linha Secundária de Logística -->
+
+                <div style="text-align: center; margin-top: 3.5rem;">
+
+                    <div class="trajectory-footnote" style="margin-inline: auto;">
+
+                        <span class="footnote-label">FORMAÇÃO COMPLEMENTAR:</span>
+
+                        <span class="footnote-text">Formação técnica concluída e tecnólogo em Logística em andamento (2026).</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Section 3: Projects -->
+
+        <section class="projects-section" id="projects">
+
+            <div class="proj-bg"></div>
+
+            <div class="projects-container">
+
+                <h2 class="headline" style="text-align: center; margin-bottom: clamp(2.5rem, 4vw, 3.5rem); margin-inline: auto;">
+
+                    Projetos que eu já <span>criei</span>
+
+                </h2>
+
+
+
+                <div class="projects-grid">
+
+                    <!-- Project 1: Featured -->
+
+                    <a href="https://eter.auveloir.com/" target="_blank" rel="noopener noreferrer" class="project-card featured" style="--accent-rgb: 196, 22, 50; text-decoration: none; color: inherit;" aria-label="Acessar projeto Éter — Caneta Inteligente">
+                        <div class="project-inner-grid"></div>
+                        <div class="project-img-wrapper">
+                            <img src="assets/eter-precision-studio.png" alt="ÉTER — Caneta Inteligente" onerror="this.onerror=null; this.src='https://eter.auveloir.com/assets/product/eter-precision-studio.png';">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta">
+                                <span class="company">ÉTER · ASIMOV ACADEMY</span>
+                                <span class="year">2026</span>
+                                <span style="margin-left: auto; display: inline-flex; align-items: center; gap: 0.35rem; color: var(--primary); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em;">
+                                    EXPLORAR
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                                </span>
+                            </div>
+                            <h3 class="project-title">Caneta<br>inteligente</h3>
+                            <p class="project-desc">Estudo conceitual de produto e experiência digital desenvolvido na Asimov Academy. Uma landing page imersiva para a Éter, caneta inteligente com engenharia do gesto e fluxo dinâmico sem atrito.</p>
+                        </div>
+                    </a>
+
+                    <!-- Project 2: Mini SaaS Financeiro (Finelo) -->
+                    <a href="https://finelofinance.lovable.app/" target="_blank" rel="noopener noreferrer" class="project-card" style="--accent-rgb: 157, 0, 255; text-decoration: none; color: inherit;" aria-label="Acessar projeto Finelo — Mini SaaS de Organização Financeira">
+                        <div class="project-inner-grid"></div>
+                        <div class="project-img-wrapper">
+                            <img src="assets/finelo_preview.png" alt="Finelo — Gestão Financeira Pessoal com IA" onerror="this.onerror=null; this.src='https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/lovp_0ktfxps01r9s4rnqrrh3e9e8aq/45ef07e0e10d3a0bcae7e8c14ea06ef1_1791905898671.png';">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta">
+                                <span class="company">FINELO · LOVABLE</span>
+                                <span class="year">2026</span>
+                                <span style="margin-left: auto; display: inline-flex; align-items: center; gap: 0.35rem; color: var(--primary); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em;">
+                                    VER SAAS
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                                </span>
+                            </div>
+                            <h3 class="project-title">Mini SaaS<br>Financeiro</h3>
+                            <p class="project-desc">Aplicação para organização de finanças pessoais via IA no-code no Lovable. Registro de receitas e despesas por conversação natural e relatórios analíticos em tempo real.</p>
+                        </div>
+                    </a>
+
+                    <!-- Project 3 -->
+
+                    <div class="project-card" style="--accent-rgb: 255, 107, 0;">
+
+                        <div class="project-inner-grid"></div>
+
+                        <div class="project-img-wrapper">
+
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200" alt="Google Clusters">
+
+                        </div>
+
+                        <div class="project-info">
+
+                            <div class="project-meta">
+
+                                <span class="company">Google</span>
+
+                                <span class="year">2022</span>
+
+                            </div>
+
+                            <h3 class="project-title">Modelos<br>globais</h3>
+
+                            <p class="project-desc">Criou modelos comportamentais para personalização em escala global.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Section 4: Testimonials -->
+
+        <!-- Section 4: Laboratório & Experimentos (Substituindo Depoimentos) -->
+
+        <section class="testimonials-section" id="testimonials">
+
+            <div style="text-align: center; margin-bottom: 1rem;">
+
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--primary); letter-spacing: 0.1em; text-transform: uppercase;">PESQUISA & ENGENHARIA</span>
+
+            </div>
+
+            <h2 class="headline" style="text-align: center; margin-bottom: clamp(2.5rem, 4vw, 3.5rem); margin-inline: auto;">
+
+                Laboratório & <span>Experimentos</span>
+
+            </h2>
+
+
+
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <!-- Experiment Card 001 -->
+                    <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">ANALYTICS &bull; EXP. 001</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: CONCLUÍDO</span>
+                        </div>
+                        <p class="testimonial-text">
+                            <strong>BI & Vibe Coding (Porsche Sales Analytics):</strong> Desenvolvimento de dashboard interativo para análise e visualização de desempenho comercial. Aplicação prática de Business Intelligence e metodologia de <em>vibe coding</em> para prototipagem ágil de web apps voltados à tomada de decisão estratégica com base em dados.
+                        </p>
+                        <div class="testimonial-author" style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 0.85rem;">
+                            <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(196, 22, 50, 0.12); border: 1px solid rgba(196, 22, 50, 0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="bar-chart-2" style="width: 18px; height: 18px; color: var(--primary);"></i>
+                            </div>
+                            <div class="author-info">
+                                <span class="author-name">Business Intelligence & Web Analytics</span>
+                                <span class="author-role" style="font-family: var(--font-mono); font-size: 0.75rem;">Power BI, Vibe Coding & Métricas de Negócio</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experiment Card 002 -->
+                    <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">AI-DEV &bull; EXP. 002</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: CONCLUÍDO</span>
+                        </div>
+                        <p class="testimonial-text">
+                            <strong>Mini SaaS Financeiro com IA Assistiva (Lovable & DIO):</strong> Criação e arquitetura de uma aplicação web para organização e controle de finanças pessoais via plataforma Lovable. Estruturação completa de entidades para receitas e despesas com interface intuitiva acelerada por inteligência artificial generativa.
+                        </p>
+                        <div class="testimonial-author" style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 0.85rem;">
+                            <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(196, 22, 50, 0.12); border: 1px solid rgba(196, 22, 50, 0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="sparkles" style="width: 18px; height: 18px; color: var(--primary);"></i>
+                            </div>
+                            <div class="author-info">
+                                <span class="author-name">Engenharia de Produto No-Code & IA</span>
+                                <span class="author-role" style="font-family: var(--font-mono); font-size: 0.75rem;">Lovable, IA Generativa & Estudos DIO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experiment Card 003 -->
+                    <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">DATA-OPS &bull; EXP. 003</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: PRODUÇÃO</span>
+                        </div>
+                        <p class="testimonial-text">
+                            <strong>Gestão de Estoque & Integridade de Dados (ERPNext · Shopee):</strong> Parametrização, consulta e acompanhamento de fluxos de materiais em larga escala via ERPNext. Modelagem de planilhas avançadas e dashboards analíticos para auditoria operacional, identificação e mitigação de inconsistências de dados.
+                        </p>
+                        <div class="testimonial-author" style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 0.85rem;">
+                            <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(196, 22, 50, 0.12); border: 1px solid rgba(196, 22, 50, 0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="database" style="width: 18px; height: 18px; color: var(--primary);"></i>
+                            </div>
+                            <div class="author-info">
+                                <span class="author-name">Sistemas ERP & Qualidade de Dados</span>
+                                <span class="author-role" style="font-family: var(--font-mono); font-size: 0.75rem;">ERPNext, Excel Avançado & Rotinas Shopee</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experiment Card 004 -->
+                    <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">INFRA &bull; EXP. 004</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: PRODUÇÃO</span>
+                        </div>
+                        <p class="testimonial-text">
+                            <strong>Operações Críticas & Ecossistema de Nuvem (Amazon · AWS & Dolphin):</strong> Atuação operacional em First Mile de alta demanda na Amazon, operando ferramentas corporativas internas incluindo ecossistema AWS e sistema Dolphin. Rastreabilidade, recebimento e roteamento de alto volume para distribuição interestadual.
+                        </p>
+                        <div class="testimonial-author" style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 0.85rem;">
+                            <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(196, 22, 50, 0.12); border: 1px solid rgba(196, 22, 50, 0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="boxes" style="width: 18px; height: 18px; color: var(--primary);"></i>
+                            </div>
+                            <div class="author-info">
+                                <span class="author-name">Sistemas de Distribuição & Cloud Ops</span>
+                                <span class="author-role" style="font-family: var(--font-mono); font-size: 0.75rem;">AWS Ecosystem, Dolphin & Amazon First Mile</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experiment Card 005 -->
+                    <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">CORE-DEV &bull; EXP. 005</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: ATIVO</span>
+                        </div>
+                        <p class="testimonial-text">
+                            <strong>Modelagem de Dados & Controle de Versão (SQL, Git & ADS):</strong> Fundamentos aplicados de desenvolvimento de software na graduação em Análise e Desenvolvimento de Sistemas (Multivix). Aplicação contínua de modelagem relacional com SQL, lógica computacional e pipelines de versionamento com Git/GitHub.
+                        </p>
+                        <div class="testimonial-author" style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 0.85rem;">
+                            <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(196, 22, 50, 0.12); border: 1px solid rgba(196, 22, 50, 0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="git-branch" style="width: 18px; height: 18px; color: var(--primary);"></i>
+                            </div>
+                            <div class="author-info">
+                                <span class="author-name">Fundamentos de Engenharia de Software</span>
+                                <span class="author-role" style="font-family: var(--font-mono); font-size: 0.75rem;">Git/GitHub, SQL & Graduando ADS (Multivix)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DUPLICATE FOR SEAMLESS LOOP -->
+                    <!-- Experiment Card 001 -->
+                    <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">ANALYTICS &bull; EXP. 001</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: CONCLUÍDO</span>
+                        </div>
+                        <p class="testimonial-text">
+                            <strong>BI & Vibe Coding (Porsche Sales Analytics):</strong> Desenvolvimento de dashboard interativo para análise e visualização de desempenho comercial. Aplicação prática de Business Intelligence e metodologia de <em>vibe coding</em> para prototipagem ágil de web apps voltados à tomada de decisão estratégica com base em dados.
+                        </p>
+                        <div class="testimonial-author" style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 0.85rem;">
+                            <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(196, 22, 50, 0.12); border: 1px solid rgba(196, 22, 50, 0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="bar-chart-2" style="width: 18px; height: 18px; color: var(--primary);"></i>
+                            </div>
+                            <div class="author-info">
+                                <span class="author-name">Business Intelligence & Web Analytics</span>
+                                <span class="author-role" style="font-family: var(--font-mono); font-size: 0.75rem;">Power BI, Vibe Coding & Métricas de Negócio</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experiment Card 002 -->
+                    <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">AI-DEV &bull; EXP. 002</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: CONCLUÍDO</span>
+                        </div>
+                        <p class="testimonial-text">
+                            <strong>Mini SaaS Financeiro com IA Assistiva (Lovable & DIO):</strong> Criação e arquitetura de uma aplicação web para organização e controle de finanças pessoais via plataforma Lovable. Estruturação completa de entidades para receitas e despesas com interface intuitiva acelerada por inteligência artificial generativa.
+                        </p>
+                        <div class="testimonial-author" style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 0.85rem;">
+                            <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(196, 22, 50, 0.12); border: 1px solid rgba(196, 22, 50, 0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="sparkles" style="width: 18px; height: 18px; color: var(--primary);"></i>
+                            </div>
+                            <div class="author-info">
+                                <span class="author-name">Engenharia de Produto No-Code & IA</span>
+                                <span class="author-role" style="font-family: var(--font-mono); font-size: 0.75rem;">Lovable, IA Generativa & Estudos DIO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experiment Card 003 -->
+                    <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">DATA-OPS &bull; EXP. 003</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: PRODUÇÃO</span>
+                        </div>
+                        <p class="testimonial-text">
+                            <strong>Gestão de Estoque & Integridade de Dados (ERPNext · Shopee):</strong> Parametrização, consulta e acompanhamento de fluxos de materiais em larga escala via ERPNext. Modelagem de planilhas avançadas e dashboards analíticos para auditoria operacional, identificação e mitigação de inconsistências de dados.
+                        </p>
+                        <div class="testimonial-author" style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 0.85rem;">
+                            <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(196, 22, 50, 0.12); border: 1px solid rgba(196, 22, 50, 0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="database" style="width: 18px; height: 18px; color: var(--primary);"></i>
+                            </div>
+                            <div class="author-info">
+                                <span class="author-name">Sistemas ERP & Qualidade de Dados</span>
+                                <span class="author-role" style="font-family: var(--font-mono); font-size: 0.75rem;">ERPNext, Excel Avançado & Rotinas Shopee</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experiment Card 004 -->
+                    <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">INFRA &bull; EXP. 004</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: PRODUÇÃO</span>
+                        </div>
+                        <p class="testimonial-text">
+                            <strong>Operações Críticas & Ecossistema de Nuvem (Amazon · AWS & Dolphin):</strong> Atuação operacional em First Mile de alta demanda na Amazon, operando ferramentas corporativas internas incluindo ecossistema AWS e sistema Dolphin. Rastreabilidade, recebimento e roteamento de alto volume para distribuição interestadual.
+                        </p>
+                        <div class="testimonial-author" style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 0.85rem;">
+                            <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(196, 22, 50, 0.12); border: 1px solid rgba(196, 22, 50, 0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="boxes" style="width: 18px; height: 18px; color: var(--primary);"></i>
+                            </div>
+                            <div class="author-info">
+                                <span class="author-name">Sistemas de Distribuição & Cloud Ops</span>
+                                <span class="author-role" style="font-family: var(--font-mono); font-size: 0.75rem;">AWS Ecosystem, Dolphin & Amazon First Mile</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experiment Card 005 -->
+                    <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">CORE-DEV &bull; EXP. 005</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: ATIVO</span>
+                        </div>
+                        <p class="testimonial-text">
+                            <strong>Modelagem de Dados & Controle de Versão (SQL, Git & ADS):</strong> Fundamentos aplicados de desenvolvimento de software na graduação em Análise e Desenvolvimento de Sistemas (Multivix). Aplicação contínua de modelagem relacional com SQL, lógica computacional e pipelines de versionamento com Git/GitHub.
+                        </p>
+                        <div class="testimonial-author" style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 0.85rem;">
+                            <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(196, 22, 50, 0.12); border: 1px solid rgba(196, 22, 50, 0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="git-branch" style="width: 18px; height: 18px; color: var(--primary);"></i>
+                            </div>
+                            <div class="author-info">
+                                <span class="author-name">Fundamentos de Engenharia de Software</span>
+                                <span class="author-role" style="font-family: var(--font-mono); font-size: 0.75rem;">Git/GitHub, SQL & Graduando ADS (Multivix)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Section 5: Final CTA -->
+
+        <section class="cta-section reveal" id="contact">
+
+            <div class="cta-aura"></div>
+
+            <div class="cta-container">
+
+                <div class="cta-card">
+
+                    <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--primary); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem;">DIREÇÃO DE PROJETOS · AUVELOIR</div>
+
+                    <h2 class="headline" style="font-family: var(--font-display);">
+
+                        Vamos construir algo <span>extraordinário?</span>
+
+                    </h2>
+
+                    <p class="cta-subtitle">
+
+                        Laboratório independente aberto para novas conexões, projetos desafiadores e desenvolvimento de interfaces de alto nível.
+
+                    </p>
+
+                    <div class="cta-action">
+
+                        <span class="cta-action-text">Ideias em construção. O sistema cria reconhecimento, o trabalho cria reputação.</span>
+
+                        
+
+                        <a href="mailto:contato@auveloir.com" class="btn-beam cta-large">
+
+                            <div class="beam-border"></div>
+
+                            <div class="btn-content-bg">
+
+                                <div class="bottom-glow"></div>
+
+                            </div>
+
+                            <span style="position: relative; z-index: 10; display: flex; align-items: center; justify-content: center; gap: 0.6rem;">
+
+                                Iniciar uma Conversa
+
+                                <i data-lucide="arrow-up-right" style="width: 1.2rem; height: 1.2rem;"></i>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- Semantic Site Footer -->
+
+    <footer class="site-footer" role="contentinfo">
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="24" height="24" role="img" aria-label="AUVELOIR">
+
+                    <path d="M48.85298 17.85867 A22 22 0 1 0 53.25037 37.69402" stroke="#F0F1F3" stroke-width="4.2" fill="none" stroke-linecap="round"/>
+
+                    <circle cx="53.47851" cy="27.23833" r="4.2" fill="#C41632"/>
+
+                </svg>
+
+                <span class="footer-logo">AUVELOIR</span>
+
+                <span style="color: var(--text-muted); font-size: 0.8rem; letter-spacing: 0.05em;">· MELLO Digital Lab</span>
+
+            </div>
+
+            <div class="footer-meta">
+
+                <span>DESIGN SYSTEM v1.0</span>
+
+                <span class="status-indicator"><span class="status-dot" aria-hidden="true"></span>OPERACIONAL</span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        // Initialize Lucide icons
+
+        lucide.createIcons();
+
+
+
+        // --- Intersection Observer for Reveal Animations ---
+
+        const revealOptions = {
+
+            threshold: 0.15,
+
+            rootMargin: '0px 0px -50px 0px'
+
+        };
+
+
+
+        const revealObserver = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    // Stagger project cards if the grid enters view
+
+                    if (entry.target.classList.contains('projects-grid')) {
+
+                        const cards = entry.target.querySelectorAll('.project-card');
+
+                        cards.forEach((card, index) => {
+
+                            setTimeout(() => card.classList.add('active'), index * 200);
+
+                        });
+
+                        revealObserver.unobserve(entry.target);
+
+                    } else {
+
+                        entry.target.classList.add('active');
+
+                        revealObserver.unobserve(entry.target);
+
+                    }
+
+                }
+
+            });
+
+        }, revealOptions);
+
+
+
+        // Observe elements
+
+        document.querySelectorAll('.timeline-item-wrapper, .projects-grid, .cta-section').forEach(el => {
+
+            revealObserver.observe(el);
+
+        });
+
+
+
+        // --- Vertical Timeline Progress Line ---
+
+        const progressLine = document.getElementById('timeline-progress-v');
+
+        const timelineBody = document.querySelector('.timeline-body');
+
+
+
+        const updateTimelineProgress = () => {
+
+            if (!progressLine || !timelineBody) return;
+
+
+
+            const rect = timelineBody.getBoundingClientRect();
+
+            const viewHeight = window.innerHeight;
+
+            
+
+            // Progress starts when top of timeline hits middle of screen
+
+            const startScroll = rect.top - (viewHeight / 2);
+
+            const totalHeight = rect.height;
+
+            
+
+            let progress = 0;
+
+            if (startScroll < 0) {
+
+                progress = Math.min(Math.max((Math.abs(startScroll) / totalHeight) * 100, 0), 100);
+
+                progressLine.style.height = `${progress}%`;
+
+            }
+
+        };
+
+
+
+    // --- Project Card 3D Tilt & Mouse Interaction ---
+
+    const handleOnMouseMove = e => {
+
+        const { currentTarget: target } = e;
+
+        const rect = target.getBoundingClientRect(),
+
+        x = e.clientX - rect.left,
+
+        y = e.clientY - rect.top;
+
+
+
+        // Flashlight vars
+
+        target.style.setProperty("--mouse-x", `${x}px`);
+
+        target.style.setProperty("--mouse-y", `${y}px`);
+
+
+
+        // 3D Tilt calculation
+
+        const centerX = rect.width / 2;
+
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -10; // Max 10deg
+
+        const rotateY = ((x - centerX) / centerX) * 10;
+
+
+
+        target.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+    };
+
+
+
+    const handleMouseLeave = e => {
+
+        const { currentTarget: target } = e;
+
+        target.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+
+    };
+
+
+
+    // A11y: Check for reduced motion preference before activating 3D mouse tracking
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion) {
+
+        for(const card of document.querySelectorAll(".project-card")) {
+
+            card.addEventListener('mousemove', handleOnMouseMove);
+
+            card.addEventListener('mouseleave', handleMouseLeave);
+
+        }
+
+    }
+
+
+
+        window.addEventListener('scroll', updateTimelineProgress);
+
+        window.addEventListener('resize', updateTimelineProgress);
+
+        updateTimelineProgress(); // Initial check
+
+    </script>
+
+<script>
+
+        // Check if embedded in catalog iframe
+
+        if (window.self !== window.top) {
+
+            document.body.classList.add('in-catalog-iframe');
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+

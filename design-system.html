@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUVELOIR — Design System Catalog</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Reused Source Stylesheet -->
+    <link rel="stylesheet" href="assets/overview/style.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--bg-page, #090B10);
+            color: var(--text-main, #F0F1F3);
+            font-family: var(--font-body, 'Inter', sans-serif);
+        }
+
+        /* Master Catalog Shell Navbar */
+        .catalog-nav {
+            position: fixed;
+            top: 1rem;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: min(96%, 1300px);
+            background: rgba(9, 11, 16, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border, rgba(167, 173, 186, 0.15));
+            border-radius: 9999px;
+            padding: 0.6rem 1.4rem;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px -5px var(--primary-glow, rgba(196, 22, 50, 0.2));
+            transition: all 0.3s ease;
+        }
+
+        .brand-group {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+        }
+
+        .brand-text {
+            font-family: var(--font-display, 'Space Grotesk', sans-serif);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main, #F0F1F3);
+            letter-spacing: 0.08em;
+        }
+
+        .catalog-tag {
+            font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+            font-size: 0.7rem;
+            color: var(--text-secondary, #A7ADBA);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-left: 0.2rem;
+        }
+
+        /* Tab Navigation */
+        .catalog-tabs {
+            display: flex;
+            align-items: center;
+            background: rgba(20, 23, 30, 0.8);
+            padding: 0.3rem 0.35rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            gap: 0.25rem;
+        }
+
+        .tab-btn {
+            font-family: var(--font-body, 'Inter', sans-serif);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary, #A7ADBA);
+            text-decoration: none;
+            padding: 0.45rem 1.25rem;
+            border-radius: 9999px;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main, #F0F1F3);
+        }
+
+        .tab-btn.active {
+            background: var(--primary, #C41632);
+            color: #FFFFFF;
+            font-weight: 600;
+            box-shadow: 0 0 16px var(--primary-glow, rgba(196, 22, 50, 0.5));
+        }
+
+        /* Phase status indicator */
+        .phase-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+            font-size: 0.75rem;
+            color: var(--text-secondary, #A7ADBA);
+        }
+
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #00E599;
+            box-shadow: 0 0 8px #00E599;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 229, 153, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 229, 153, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 229, 153, 0); }
+        }
+
+        /* Viewport iframe */
+        .catalog-viewport {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            display: block;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--primary, #C41632);
+            outline-offset: 3px;
+        }
+
+        .tab-btn:focus-visible, .brand-group:focus-visible {
+            outline: 2px solid var(--primary, #C41632);
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .pulse-dot {
+                animation: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .catalog-nav {
+                padding: 0.5rem 1rem;
+            }
+            .phase-indicator {
+                display: none;
+            }
+            .catalog-tag {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Master Navbar -->
+    <nav class="catalog-nav">
+        <a href="#overview" class="brand-group">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="30" height="30" role="img" aria-label="AUVELOIR">
+                <path d="M48.85298 17.85867 A22 22 0 1 0 53.25037 37.69402" stroke="#F0F1F3" stroke-width="4.2" fill="none" stroke-linecap="round"/>
+                <circle cx="53.47851" cy="27.23833" r="4.2" fill="#C41632"/>
+            </svg>
+            <span class="brand-text">AUVELOIR</span>
+            <span class="catalog-tag">DESIGN SYSTEM</span>
+        </a>
+
+        <!-- Overview | Components Navigation -->
+        <div class="catalog-tabs">
+            <a href="#overview" class="tab-btn active" id="tab-overview">Overview</a>
+            <a href="#components" class="tab-btn" id="tab-components">Components</a>
+        </div>
+
+        <div class="phase-indicator">
+            <div class="pulse-dot"></div>
+            <span>FASE 2: CATÁLOGO COMPLETO</span>
+        </div>
+    </nav>
+
+    <!-- Main View: Borderless Iframe filling area below navbar -->
+    <iframe id="catalog-frame" class="catalog-viewport" src="assets/overview/index.html" title="AUVELOIR Design System"></iframe>
+
+    <script>
+        const tabOverview = document.getElementById('tab-overview');
+        const tabComponents = document.getElementById('tab-components');
+        const catalogFrame = document.getElementById('catalog-frame');
+
+        function handleRouting() {
+            const hash = window.location.hash || '#overview';
+            if (hash === '#components') {
+                tabOverview.classList.remove('active');
+                tabComponents.classList.add('active');
+                if (catalogFrame.getAttribute('src') !== 'assets/components/index.html') {
+                    catalogFrame.setAttribute('src', 'assets/components/index.html');
+                }
+            } else {
+                tabComponents.classList.remove('active');
+                tabOverview.classList.add('active');
+                if (catalogFrame.getAttribute('src') !== 'assets/overview/index.html') {
+                    catalogFrame.setAttribute('src', 'assets/overview/index.html');
+                }
+            }
+        }
+
+        window.addEventListener('hashchange', handleRouting);
+        window.addEventListener('DOMContentLoaded', handleRouting);
+    </script>
+</body>
+</html>
