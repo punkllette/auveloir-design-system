@@ -1,0 +1,47 @@
+---
+interface Props {
+  href: string;
+  accessibleLabel: string;
+  featured?: boolean;
+  accentRgb: string;
+  webp: string;
+  png: string;
+  width: number;
+  height: number;
+  alt: string;
+  fallback: string;
+  company: string;
+  year: string;
+  action: string;
+  titleTop: string;
+  titleBottom: string;
+  description: string;
+}
+
+const {
+  href, accessibleLabel, featured = false, accentRgb, webp, png, width, height,
+  alt, fallback, company, year, action, titleTop, titleBottom, description,
+} = Astro.props;
+const imageError = `this.onerror=null; this.parentElement.querySelector('source')?.remove(); this.src=${JSON.stringify(fallback)};`;
+---
+<a href={href} target="_blank" rel="noopener noreferrer" class={featured ? 'project-card featured' : 'project-card'} style={`--accent-rgb: ${accentRgb}; text-decoration: none; color: inherit;`} aria-label={accessibleLabel}>
+  <div class="project-inner-grid"></div>
+  <div class="project-img-wrapper">
+    <picture>
+      <source srcset={webp} type="image/webp" />
+      <img src={png} width={width} height={height} loading="lazy" decoding="async" alt={alt} onerror={imageError} />
+    </picture>
+  </div>
+  <div class="project-info">
+    <div class="project-meta">
+      <span class="company">{company}</span>
+      <span class="year">{year}</span>
+      <span style="margin-left: auto; display: inline-flex; align-items: center; gap: 0.35rem; color: var(--primary); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em;">
+        {action}
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+      </span>
+    </div>
+    <h3 class="project-title">{titleTop}<br />{titleBottom}</h3>
+    <p class="project-desc">{description}</p>
+  </div>
+</a>

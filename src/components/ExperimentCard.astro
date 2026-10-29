@@ -1,0 +1,36 @@
+---
+interface Props {
+  category: string;
+  number: string;
+  status: string;
+  title: string;
+  descriptionBefore: string;
+  emphasis?: string;
+  descriptionAfter?: string;
+  author: string;
+  role: string;
+  icon: string;
+  duplicate?: boolean;
+}
+
+const {
+  category, number, status, title, descriptionBefore, emphasis,
+  descriptionAfter = '', author, role, icon, duplicate = false,
+} = Astro.props;
+---
+<div class="testimonial-card" aria-hidden={duplicate ? 'true' : undefined} style="border-top: 2px solid var(--primary-border);">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">{category} &bull; EXP. {number}</span>
+    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: {status}</span>
+  </div>
+  <p class="testimonial-text"><strong>{title}</strong> {descriptionBefore}{emphasis && <em>{emphasis}</em>}{descriptionAfter}</p>
+  <div class="testimonial-author" style="border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1.5rem; display: flex; align-items: center; gap: 0.85rem;">
+    <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(196, 22, 50, 0.12); border: 1px solid rgba(196, 22, 50, 0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+      <i data-lucide={icon} style="width: 18px; height: 18px; color: var(--primary);"></i>
+    </div>
+    <div class="author-info">
+      <span class="author-name">{author}</span>
+      <span class="author-role" style="font-family: var(--font-mono); font-size: 0.75rem;">{role}</span>
+    </div>
+  </div>
+</div>

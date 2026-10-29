@@ -1,0 +1,35 @@
+---
+interface Props {
+  year: string;
+  company: string;
+  role: string;
+  description: string;
+  logo: 'amazon' | 'shopee' | 'auveloir';
+  featured?: boolean;
+}
+
+const { year, company, role, description, logo, featured = false } = Astro.props;
+---
+<div class="timeline-item-wrapper">
+  <div class="timeline-v-dot"></div>
+  <div class="timeline-item-content">
+    <span class="timeline-v-year">{year}</span>
+    <div class="timeline-card-glass" style={featured ? 'border-top: 2px solid var(--primary-border);' : undefined}>
+      <div class="company-header">
+        <div class="company-logo">
+          {logo === 'amazon' && <span class="iconify" data-icon="simple-icons:amazon" style="color: #FF9900; font-size: 26px;"></span>}
+          {logo === 'shopee' && <span class="iconify" data-icon="simple-icons:shopee" style="color: #EE4D2D; font-size: 26px;"></span>}
+          {logo === 'auveloir' && <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="28" height="28" role="img" aria-label="AUVELOIR">
+            <path d="M48.85298 17.85867 A22 22 0 1 0 53.25037 37.69402" stroke="#F0F1F3" stroke-width="4.2" fill="none" stroke-linecap="round"/>
+            <circle cx="53.47851" cy="27.23833" r="4.2" fill="#C41632"/>
+          </svg>}
+        </div>
+        <div>
+          <h3 class="company-name">{company}</h3>
+          <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--primary); letter-spacing: 0.05em; margin-top: 0.2rem;">{role}</div>
+        </div>
+      </div>
+      <p class="job-desc">{description}</p>
+    </div>
+  </div>
+</div>
