@@ -37,8 +37,8 @@ auveloir-design-system/
 2. **Trajetória:** Linha do tempo vertical interativa com preenchimento em gradiente vermelho reativo à rolagem, registrando experiências em logística (Amazon First Mile), análise de dados (Shopee) e formação em ADS (Multivix) / fundação da AUVELOIR.
 3. **Projetos Selecionados:**
    - **ÉTER — Caneta Inteligente:** Estudo conceitual de produto e landing page cinematográfica (Asimov Academy) — [eter.auveloir.com](https://eter.auveloir.com/).
-   - **Finelo — Mini SaaS Financeiro:** Aplicação para gestão financeira pessoal com inteligência artificial conversacional via Lovable — [finelofinance.lovable.app](https://finelofinance.lovable.app/).
-4. **Laboratório & Experimentos:** Marquee contínuo com 5 iniciativas em Business Intelligence, Vibe Coding, Engenharia No-Code, Qualidade de Dados (ERPNext) e Sistemas Cloud/First Mile.
+   - **Nexo — Finanças Pessoais:** Protótipo conceitual com painel financeiro, transações, metas e simulação local de registro por conversa — [nexo.auveloir.com](https://nexo.auveloir.com/).
+4. **Laboratório & Experimentos:** Marquee contínuo com 5 iniciativas em Business Intelligence, Vibe Coding, Design de Produto Digital, Qualidade de Dados (ERPNext) e Sistemas Cloud/First Mile.
 5. **CTA & Contato:** Canal direto para novos projetos e colaborações digitais.
 
 ---
