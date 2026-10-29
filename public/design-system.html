@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo visual do AUVELOIR Design System: portfólio e componentes.">
     <title>AUVELOIR — Design System Catalog</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Reused Source Stylesheet -->
+    <link rel="stylesheet" href="assets/overview/fonts.css">
     <link rel="stylesheet" href="assets/overview/style.css">
     <style>
         html, body {
@@ -168,6 +170,34 @@
                 display: none;
             }
         }
+        @media (max-width: 480px) {
+            .catalog-nav {
+                top: 0.5rem;
+                width: calc(100% - 1rem);
+                flex-wrap: wrap;
+                gap: 0.4rem;
+                padding: 0.5rem;
+                border-radius: 1.25rem;
+            }
+            .brand-group {
+                justify-content: center;
+                width: 100%;
+            }
+            .catalog-tabs {
+                width: 100%;
+            }
+            .tab-btn {
+                flex: 1;
+                justify-content: center;
+                min-width: 0;
+                padding: 0.55rem 0.5rem;
+            }
+            .catalog-viewport {
+                top: 7rem;
+                height: calc(100vh - 7rem);
+                height: calc(100dvh - 7rem);
+            }
+        }
     </style>
 </head>
 <body>
@@ -184,7 +214,7 @@
 
         <!-- Overview | Components Navigation -->
         <div class="catalog-tabs">
-            <a href="#overview" class="tab-btn active" id="tab-overview">Overview</a>
+            <a href="#overview" class="tab-btn active" id="tab-overview" aria-current="page">Overview</a>
             <a href="#components" class="tab-btn" id="tab-components">Components</a>
         </div>
 
@@ -206,13 +236,17 @@
             const hash = window.location.hash || '#overview';
             if (hash === '#components') {
                 tabOverview.classList.remove('active');
+                tabOverview.removeAttribute('aria-current');
                 tabComponents.classList.add('active');
+                tabComponents.setAttribute('aria-current', 'page');
                 if (catalogFrame.getAttribute('src') !== 'assets/components/index.html') {
                     catalogFrame.setAttribute('src', 'assets/components/index.html');
                 }
             } else {
                 tabComponents.classList.remove('active');
+                tabComponents.removeAttribute('aria-current');
                 tabOverview.classList.add('active');
+                tabOverview.setAttribute('aria-current', 'page');
                 if (catalogFrame.getAttribute('src') !== './') {
                     catalogFrame.setAttribute('src', './');
                 }

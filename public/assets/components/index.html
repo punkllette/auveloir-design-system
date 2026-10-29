@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Componentes e fundamentos visuais do AUVELOIR Design System.">
     <title>AUVELOIR — Catálogo de Componentes (Fase 2)</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Base Overview Stylesheet -->
     <link rel="stylesheet" href="../overview/fonts.css">
     <link rel="stylesheet" href="../overview/style.css">
     <!-- Components Catalog Stylesheet -->
     <link rel="stylesheet" href="components.css">
     <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 </head>
 <body>
     <!-- Live Principal Background (Extraído diretamente da Overview) -->
@@ -316,7 +317,8 @@
                 <!-- Interactive States Table -->
                 <div class="color-subgroup">
                     <h3 class="color-subgroup-title">Família de Estados Interativos</h3>
-                    <table class="states-table" role="table">
+                    <div class="states-table-wrap" tabindex="0" role="region" aria-label="Tabela de estados interativos; role para os lados para ver todas as colunas">
+                    <table class="states-table">
                         <thead>
                             <tr>
                                 <th>Estado</th>
@@ -357,6 +359,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </section>
 
@@ -561,7 +564,7 @@
                         <code class="specimen-code-tag">.btn-beam</code>
                     </div>
                     <div class="specimen-live-container">
-                        <a href="#demo" class="btn-beam" onclick="return false;">
+                        <a href="../../#projects" target="_top" class="btn-beam">
                             <div class="beam-border"></div>
                             <div class="btn-content-bg">
                                 <div class="bottom-glow"></div>
@@ -581,7 +584,7 @@
                         <code class="specimen-code-tag">.btn-beam.cta-large</code>
                     </div>
                     <div class="specimen-live-container">
-                        <a href="#demo" class="btn-beam cta-large" onclick="return false;">
+                        <a href="mailto:contato@auveloir.com" class="btn-beam cta-large">
                             <div class="beam-border"></div>
                             <div class="btn-content-bg">
                                 <div class="bottom-glow"></div>
@@ -601,10 +604,10 @@
                         <code class="specimen-code-tag">.btn-nav-accent · .btn-secondary</code>
                     </div>
                     <div class="specimen-live-container" style="gap: 3rem;">
-                        <a href="#demo" class="btn-nav-accent" onclick="return false;">
+                        <a href="../../#contact" target="_top" class="btn-nav-accent">
                             Iniciar Projeto
                         </a>
-                        <a href="#demo" class="btn-secondary" onclick="return false;">
+                        <a href="../../#projects" target="_top" class="btn-secondary">
                             Ver Todos os Cases
                             <i data-lucide="arrow-right" style="width: 1rem; height: 1rem;"></i>
                         </a>
@@ -628,21 +631,21 @@
                         <span class="specimen-title">Barra Suspensa de Navegação</span>
                         <code class="specimen-code-tag">.glass-nav</code>
                     </div>
-                    <div class="specimen-live-container" style="padding: 4rem 1.5rem;">
+                    <div class="specimen-live-container nav-specimen">
                         <div class="glass-nav" style="position: relative; top: auto; width: 100%; max-width: 900px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                            <a href="#" style="display: flex; align-items: center; gap: 0.85rem; text-decoration: none;" onclick="return false;">
+                            <a href="../../" target="_top" style="display: flex; align-items: center; gap: 0.85rem; text-decoration: none;">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="28" height="28" role="img" aria-label="AUVELOIR">
                                     <path d="M48.85298 17.85867 A22 22 0 1 0 53.25037 37.69402" stroke="#F0F1F3" stroke-width="4.2" fill="none" stroke-linecap="round"/>
                                     <circle cx="53.47851" cy="27.23833" r="4.2" fill="#C41632"/>
                                 </svg>
                                 <span style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em;">AUVELOIR</span>
                             </a>
-                            <div class="nav-links" style="position: static; transform: none; display: flex; gap: 2rem;">
-                                <a href="#about" onclick="return false;">Resumo</a>
-                                <a href="#projects" onclick="return false;">Projetos</a>
-                                <a href="#contact" onclick="return false;">Contato</a>
+                            <div class="nav-links specimen-nav-links">
+                                <a href="../../#about" target="_top">Resumo</a>
+                                <a href="../../#projects" target="_top">Projetos</a>
+                                <a href="../../#contact" target="_top">Contato</a>
                             </div>
-                            <a href="#contact" class="btn-nav-accent" onclick="return false;">
+                            <a href="../../#contact" target="_top" class="btn-nav-accent">
                                 Iniciar Projeto
                             </a>
                         </div>
@@ -893,7 +896,7 @@
 
     <!-- Scripts de Interatividade -->
     <script>
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', () => window.lucide?.createIcons());
 
         // 3D Tilt e Flashlight nos cards de espécime
         const handleOnMouseMove = e => {

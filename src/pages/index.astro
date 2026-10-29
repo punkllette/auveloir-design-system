@@ -8,6 +8,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="Mello, estúdio digital independente da AUVELOIR. Projetos de design e desenvolvimento web com foco em experiências digitais, funcionalidade e performance.">
+    <meta name="theme-color" content="#090B10">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="AUVELOIR — Design System & Portfolio">
+    <meta property="og:description" content="Presença digital à altura do que você faz. Conheça os projetos e experiências digitais de Mello.">
+
     <title>AUVELOIR — Design System & Portfolio</title>
 
     <!-- Fonts -->
@@ -16,7 +23,7 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
 
@@ -26,13 +33,15 @@
 
     <!-- Scripts -->
 
-    <script is:inline src="https://unpkg.com/lucide@latest"></script>
+    <script is:inline defer src="https://unpkg.com/lucide@latest"></script>
 
-    <script is:inline src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script is:inline defer src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
 </head>
 
 <body>
+
+    <a class="skip-link" href="#main-content">Ir para o conteúdo</a>
 
     <nav class="glass-nav animate-fade-up">
 
@@ -59,6 +68,16 @@
             <a href="#contact">Contato</a>
 
         </div>
+
+        <details class="mobile-nav">
+            <summary>Menu <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+            <div class="mobile-nav-panel">
+                <a href="#about">Resumo</a>
+                <a href="#projects">Projetos</a>
+                <a href="#contact">Contato</a>
+                <a class="mobile-nav-cta" href="#contact">Iniciar Projeto</a>
+            </div>
+        </details>
 
         <a href="#contact" class="btn-nav-accent">
 
@@ -258,7 +277,7 @@
 
 
 
-    <main>
+    <main id="main-content" tabindex="-1">
 
         <!-- Seção 2: Trajetória (Estrutura Original da Timeline) -->
 
@@ -495,7 +514,7 @@
                     <a href="https://eter.auveloir.com/" target="_blank" rel="noopener noreferrer" class="project-card featured" style="--accent-rgb: 196, 22, 50; text-decoration: none; color: inherit;" aria-label="Acessar projeto Éter — Caneta Inteligente">
                         <div class="project-inner-grid"></div>
                         <div class="project-img-wrapper">
-                            <img src="assets/overview/assets/eter-precision-studio.png" alt="ÉTER — Caneta Inteligente" onerror="this.onerror=null; this.src='https://eter.auveloir.com/assets/product/eter-precision-studio.png';">
+                            <picture><source srcset="assets/overview/assets/eter-precision-studio.webp" type="image/webp"><img src="assets/overview/assets/eter-precision-studio.png" width="1672" height="941" loading="lazy" decoding="async" alt="ÉTER — Caneta Inteligente" onerror="this.onerror=null; this.parentElement.querySelector('source')?.remove(); this.src='https://eter.auveloir.com/assets/product/eter-precision-studio.png';"></picture>
                         </div>
                         <div class="project-info">
                             <div class="project-meta">
@@ -515,7 +534,7 @@
                     <a href="https://nexo.auveloir.com/" target="_blank" rel="noopener noreferrer" class="project-card" style="--accent-rgb: 210, 169, 92; text-decoration: none; color: inherit;" aria-label="Acessar projeto Nexo — protótipo de finanças pessoais">
                         <div class="project-inner-grid"></div>
                         <div class="project-img-wrapper">
-                            <img src="assets/overview/assets/nexo_preview.png" alt="Painel financeiro do protótipo Nexo, com saldo, receitas, despesas e gráfico de evolução" onerror="this.onerror=null; this.src='https://nexo.auveloir.com/favicon.svg';">
+                            <picture><source srcset="assets/overview/assets/nexo_preview.webp" type="image/webp"><img src="assets/overview/assets/nexo_preview.png" width="1440" height="900" loading="lazy" decoding="async" alt="Painel financeiro do protótipo Nexo, com saldo, receitas, despesas e gráfico de evolução" onerror="this.onerror=null; this.parentElement.querySelector('source')?.remove(); this.src='https://nexo.auveloir.com/favicon.svg';"></picture>
                         </div>
                         <div class="project-info">
                             <div class="project-meta">
@@ -535,7 +554,7 @@
                     <a href="https://punkllette.github.io/porsche-sales-dashboard/" target="_blank" rel="noopener noreferrer" class="project-card" style="--accent-rgb: 213, 0, 28; text-decoration: none; color: inherit;" aria-label="Acessar projeto Porsche Sales Insights — Dashboard Analítico Executivo">
                         <div class="project-inner-grid"></div>
                         <div class="project-img-wrapper">
-                            <img src="assets/overview/assets/porsche_preview.png" alt="Porsche Sales Insights — Executive Analytics Dashboard" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1200';">
+                            <picture><source srcset="assets/overview/assets/porsche_preview.webp" type="image/webp"><img src="assets/overview/assets/porsche_preview.png" width="1200" height="800" loading="lazy" decoding="async" alt="Porsche Sales Insights — Executive Analytics Dashboard" onerror="this.onerror=null; this.parentElement.querySelector('source')?.remove(); this.src='https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1200';"></picture>
                         </div>
                         <div class="project-info">
                             <div class="project-meta">
@@ -683,7 +702,7 @@
 
                     <!-- DUPLICATE FOR SEAMLESS LOOP -->
                     <!-- Experiment Card 001 -->
-                    <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                    <div class="testimonial-card" aria-hidden="true" style="border-top: 2px solid var(--primary-border);">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                             <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">ANALYTICS &bull; EXP. 001</span>
                             <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: CONCLUÍDO</span>
@@ -703,7 +722,7 @@
                     </div>
 
                     <!-- Experiment Card 002 -->
-                    <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                    <div class="testimonial-card" aria-hidden="true" style="border-top: 2px solid var(--primary-border);">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                             <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">PRODUTO &bull; EXP. 002</span>
                             <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: CONCLUÍDO</span>
@@ -723,7 +742,7 @@
                     </div>
 
                     <!-- Experiment Card 003 -->
-                    <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                    <div class="testimonial-card" aria-hidden="true" style="border-top: 2px solid var(--primary-border);">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                             <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">DATA-OPS &bull; EXP. 003</span>
                             <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: PRODUÇÃO</span>
@@ -743,7 +762,7 @@
                     </div>
 
                     <!-- Experiment Card 004 -->
-                    <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                    <div class="testimonial-card" aria-hidden="true" style="border-top: 2px solid var(--primary-border);">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                             <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">INFRA &bull; EXP. 004</span>
                             <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: PRODUÇÃO</span>
@@ -763,7 +782,7 @@
                     </div>
 
                     <!-- Experiment Card 005 -->
-                    <div class="testimonial-card" style="border-top: 2px solid var(--primary-border);">
+                    <div class="testimonial-card" aria-hidden="true" style="border-top: 2px solid var(--primary-border);">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                             <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">CORE-DEV &bull; EXP. 005</span>
                             <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: ATIVO</span>
@@ -889,7 +908,16 @@
 
         // Initialize Lucide icons
 
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', () => window.lucide?.createIcons());
+
+        const mobileNav = document.querySelector('.mobile-nav');
+        mobileNav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { mobileNav.open = false; }));
+        mobileNav?.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                mobileNav.open = false;
+                mobileNav.querySelector('summary').focus();
+            }
+        });
 
 
 

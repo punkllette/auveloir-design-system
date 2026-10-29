@@ -3774,3 +3774,101 @@ body.in-catalog-iframe .hero {
 
 }
 
+/* Keyboard navigation and responsive menu */
+.skip-link {
+  position: fixed;
+  top: -5rem;
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible { top: 1rem; }
+#about, #projects, #contact { scroll-margin-top: 7rem; }
+.mobile-nav { display: none; }
+.mobile-nav:not([open]) .mobile-nav-panel { display: none; }
+
+.project-img-wrapper picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .mobile-nav {
+    display: block;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+
+  .mobile-nav summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0 0.75rem;
+    color: var(--text-main);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .mobile-nav summary::-webkit-details-marker { display: none; }
+  .mobile-nav summary:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  .mobile-nav-panel {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    display: grid;
+    width: min(280px, 92vw);
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: rgba(10, 10, 14, 0.96);
+    box-shadow: var(--shadow-nav);
+  }
+
+  .mobile-nav-panel a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.6rem 0.85rem;
+    border-radius: var(--radius-sm);
+    color: var(--text-main);
+    font-size: var(--text-sm);
+    text-decoration: none;
+  }
+
+  .mobile-nav-panel a:hover,
+  .mobile-nav-panel a:focus-visible { background: var(--bg-card-hover); }
+  .mobile-nav-panel .mobile-nav-cta { color: var(--primary); font-weight: 600; }
+}
+
+@media (max-width: 480px) {
+  .glass-nav { padding-left: 0.8rem; }
+  .glass-nav > .btn-nav-accent { display: none; }
+  .mobile-nav { margin-right: 0; }
+  .testimonial-card { width: min(310px, calc(100vw - 2rem)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-container {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .marquee-content { width: 100%; }
+  .marquee-content .testimonial-card:nth-child(n+6) { display: none; }
+}
+

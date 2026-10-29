@@ -281,8 +281,20 @@
 }
 
 /* Interative States Family */
+.states-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+}
+
+.states-table-wrap:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
 .states-table {
   width: 100%;
+  min-width: 620px;
   border-collapse: collapse;
   background: rgba(20, 23, 30, 0.6);
   border: 1px solid var(--border);
@@ -475,6 +487,14 @@
   overflow: hidden;
 }
 
+.nav-specimen { padding: 4rem 1.5rem; }
+.specimen-nav-links {
+  position: static;
+  transform: none;
+  display: flex;
+  gap: 2rem;
+}
+
 /* Responsive Overrides */
 @media (max-width: 1024px) {
   .components-layout {
@@ -498,5 +518,30 @@
   }
   .type-metric {
     text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .color-grid { grid-template-columns: minmax(0, 1fr); }
+  .surfaces-grid { grid-template-columns: minmax(0, 1fr); }
+  .surface-specimen-box { padding: 2rem 1.5rem; }
+  .specimen-live-container { padding: 1.25rem; }
+  .specimen-live-container .testimonial-card { max-width: 100%; }
+  .nav-specimen .glass-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-radius: var(--radius-lg);
+  }
+  .specimen-nav-links {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .nav-specimen .glass-nav > .btn-nav-accent {
+    display: inline-flex;
+    width: 100%;
   }
 }
