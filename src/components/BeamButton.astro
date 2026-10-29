@@ -1,0 +1,18 @@
+---
+interface Props {
+  href: string;
+  large?: boolean;
+}
+
+const { href, large = false } = Astro.props;
+const contentStyle = large
+  ? 'position: relative; z-index: 10; display: flex; align-items: center; justify-content: center; gap: 0.6rem;'
+  : 'position: relative; z-index: 10; display: flex; align-items: center;';
+---
+<a href={href} class={large ? 'btn-beam cta-large' : 'btn-beam'}>
+  <div class="beam-border" aria-hidden="true"></div>
+  <div class="btn-content-bg" aria-hidden="true">
+    <div class="bottom-glow"></div>
+  </div>
+  <span style={contentStyle}><slot /></span>
+</a>
