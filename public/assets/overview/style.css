@@ -3292,6 +3292,10 @@ body {
 
   gap: 1.5rem;
 
+  flex-wrap: wrap;
+
+  justify-content: center;
+
   font-family: var(--font-mono);
 
   letter-spacing: var(--tracking-wide);
@@ -3300,32 +3304,22 @@ body {
 
 
 
-.status-indicator {
-
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 6px;
+.footer-contact {
 
   color: var(--text-secondary);
 
+  text-decoration: none;
+
+  transition: color var(--transition-fast);
+
 }
 
+.footer-contact:hover,
+.footer-contact:focus-visible { color: var(--primary); }
 
-
-.status-dot {
-
-  width: 6px;
-
-  height: 6px;
-
-  border-radius: 50%;
-
-  background: #00E599;
-
-  box-shadow: 0 0 8px #00E599;
-
+.footer-contact:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
 }
 
 
