@@ -1,0 +1,3 @@
+.company-tag{display:inline-flex;align-items:baseline;gap:7px;white-space:nowrap;color:#e7d1a5}
+.company-copyright{color:#d6ab62;font:500 15px/1 Inter,Arial,sans-serif}
+.company-tag strong{font:600 12px/1.1 Inter,Arial,sans-serif;letter-spacing:.16em}

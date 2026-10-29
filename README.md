@@ -7,7 +7,7 @@
 
 ## ✦ Visão Geral
 
-Este repositório contém o código-fonte do portfólio autoral e catálogo do **AUVELOIR Design System**, desenvolvido por **Mikael Machado David (Mello)**.
+Este repositório contém o código-fonte do portfólio autoral e catálogo do **AUVELOIR Design System**, desenvolvido por **Mikael Machado David (Mello)**. O portfólio é uma aplicação Astro; o Nexo fica em um projeto Astro independente na pasta `projects/nexo/`.
 
 A interface foi concebida sob uma estética cinematográfica escura (*Void Black & Deep Surface* com acentos em *Event Red* `#C41632`), combinando tipografia expressiva (*Space Grotesk*, *Inter* e *IBM Plex Mono*), animações fluidas guiadas por scroll e cards interativos com rotação tridimensional (3D tilt) e lanterna radial sensível ao cursor.
 
@@ -17,16 +17,15 @@ A interface foi concebida sob uma estética cinematográfica escura (*Void Black
 
 ```text
 auveloir-design-system/
-├── design-system.html          # Viewport do Design System e catálogo interativo
-├── README.md                   # Documentação do projeto
-├── .gitignore                  # Arquivos ignorados pelo Git
-└── assets/
-    ├── components/             # Especificações atômicas de componentes
-    └── overview/               # Aplicação principal do portfólio
-        ├── index.html          # Markup semântico (Hero, Trajetória, Projetos, Lab, Contato)
-        ├── style.css           # Design tokens, layout responsivo e animações CSS nativas
-        ├── fonts.css           # Definição e pré-carregamento tipográfico
-        └── assets/             # Mídias locais, logotipos e renders de alta resolução
+├── astro.config.mjs            # Configuração do portfólio Astro
+├── package.json                # Comandos e dependências do portfólio
+├── src/pages/index.astro       # Portfólio (Hero, Trajetória, Projetos, Lab, Contato)
+├── public/
+│   ├── design-system.html      # Catálogo interativo
+│   └── assets/
+│       ├── components/         # Especificações atômicas de componentes
+│       └── overview/           # CSS, fontes e mídias do portfólio
+└── projects/nexo/             # Código-fonte independente do Nexo (Astro)
 ```
 
 ---
@@ -45,10 +44,30 @@ auveloir-design-system/
 
 ## ✦ Stack Técnica
 
-- **HTML5 Semântico:** Estruturação acessível (ARIA, conformidade WCAG AAA para navegação e contraste).
+- **Astro e HTML5 Semântico:** Página do portfólio gerada estaticamente, com a estrutura e interações originais preservadas.
 - **CSS3 Nativo Moderno:** CSS Custom Properties (Design Tokens), Flexbox, CSS Grid, Backdrop Filters, Scroll-driven visual state e media query `@media (prefers-reduced-motion: reduce)`.
 - **Vanilla JavaScript:** Sem dependências ou frameworks pesados; IntersectionObserver para revelação progressiva e cálculo vetorial de física para o tilt tridimensional dos cards.
 - **Ícones:** Lucide Icons & Iconify (Simple Icons).
+
+## ✦ Desenvolvimento e builds
+
+Requer Node.js 22.23.4 ou superior. O portfólio e o Nexo têm builds independentes:
+
+```sh
+# Portfólio AUVELOIR
+npm ci
+npm run dev
+npm run build
+
+# Nexo
+cd projects/nexo
+npm ci
+npm run build
+```
+
+Depois de instalar as dependências dos dois projetos, `npm run build:all` na raiz gera ambos em sequência.
+
+O build do portfólio sai em `dist/`; o do Nexo, em `projects/nexo/dist/`. Publique cada saída no domínio correspondente. O card do Nexo no portfólio aponta para [nexo.auveloir.com](https://nexo.auveloir.com/). Nenhum dos dois projetos depende da pasta `finelofinance`.
 
 ---
 

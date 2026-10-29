@@ -195,7 +195,7 @@
     </nav>
 
     <!-- Main View: Borderless Iframe filling area below navbar -->
-    <iframe id="catalog-frame" class="catalog-viewport" src="assets/overview/index.html" title="AUVELOIR Design System"></iframe>
+    <iframe id="catalog-frame" class="catalog-viewport" src="./" title="AUVELOIR Design System"></iframe>
 
     <script>
         const tabOverview = document.getElementById('tab-overview');
@@ -213,8 +213,8 @@
             } else {
                 tabComponents.classList.remove('active');
                 tabOverview.classList.add('active');
-                if (catalogFrame.getAttribute('src') !== 'assets/overview/index.html') {
-                    catalogFrame.setAttribute('src', 'assets/overview/index.html');
+                if (catalogFrame.getAttribute('src') !== './') {
+                    catalogFrame.setAttribute('src', './');
                 }
             }
         }

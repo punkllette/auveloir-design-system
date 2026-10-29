@@ -1,0 +1,44 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../../nexo-financas-prototipo/assets/fonts.css';
+import '../../nexo-financas-prototipo/assets/ledger.css';
+import '../../nexo-financas-prototipo/styles.css';
+import '../styles/dashboard-premium.css';
+import '../styles/select-menu.css';
+import '../styles/company-tag.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Nexo — sua vida financeira, com clareza',
+  description = 'Nexo: protótipo conceitual de finanças pessoais. Dados fictícios.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0d0d" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot name="icons" />
+    <div class="app-shell">
+      <slot name="sidebar" />
+      <div class="main-column">
+        <Header />
+        <slot />
+        <Footer />
+      </div>
+    </div>
+    <slot name="overlays" />
+  </body>
+</html>

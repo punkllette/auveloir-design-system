@@ -1,0 +1,128 @@
+---
+import LogoMark from '../components/LogoMark.astro';
+import Button from '../components/Button.astro';
+import Card from '../components/Card.astro';
+import CompanyTag from '../components/CompanyTag.astro';
+import '../../nexo-financas-prototipo/assets/fonts.css';
+import '../styles/marketing.css';
+import '../styles/select-menu.css';
+import '../styles/company-tag.css';
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0d0d" />
+    <meta name="description" content="Conheça os planos do Nexo e registre seu interesse em uma experiência mais clara e elegante para suas finanças." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Planos Nexo — clareza para o que vem depois</title>
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="aurora-beam" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="site-brand" href="/" aria-label="Nexo — voltar à página inicial"><LogoMark class="site-mark" /><span>Nexo<span class="gold">.</span></span></a>
+      <nav aria-label="Navegação da página">
+        <a href="#experiencia">Experiência</a>
+        <a href="#planos">Planos</a>
+        <a class="nav-cta" href="#lista">Acesso antecipado <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> FINANÇAS COM INTENÇÃO</p>
+          <h1 id="hero-title">Clareza para <em>cada escolha.</em></h1>
+          <p class="hero-lead">Um painel sereno para acompanhar o presente e planejar o que vem depois.</p>
+          <div class="hero-actions">
+            <a class="cta-primary" href="#lista">Quero acesso antecipado <span aria-hidden="true">↗</span></a>
+            <a class="cta-secondary" href="#planos">Explorar os planos <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="hero-footnote"><span class="live-dot"></span> Protótipo em desenvolvimento · dados locais no painel</p>
+        </div>
+        <div class="hero-art" aria-label="Prévia ilustrativa de uma visão financeira Nexo">
+          <div class="art-orbit art-orbit-one"></div><div class="art-orbit art-orbit-two"></div>
+          <div class="art-card">
+            <div class="art-card-top"><span>VISÃO DO MÊS</span><span>● &nbsp; EM EQUILÍBRIO</span></div>
+            <div class="art-card-title">Seu futuro, em perspectiva.</div>
+            <div class="art-card-label">SALDO DISPONÍVEL</div>
+            <div class="art-card-value">R$ 18.420<span>,00</span></div>
+            <svg viewBox="0 0 520 190" role="img" aria-label="Linha ilustrativa de crescimento financeiro">
+              <defs><linearGradient id="heroChart" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#D6AB62" stop-opacity=".27"/><stop offset="1" stop-color="#D6AB62" stop-opacity="0"/></linearGradient></defs>
+              <path d="M0 164 C55 154 70 177 124 147 S208 116 265 125 S348 81 403 93 S474 43 520 32 L520 190 H0Z" fill="url(#heroChart)"/>
+              <path d="M0 164 C55 154 70 177 124 147 S208 116 265 125 S348 81 403 93 S474 43 520 32" fill="none" stroke="#D6AB62" stroke-width="2.5"/>
+              <circle cx="520" cy="32" r="6" fill="#F5DEAD" stroke="#4A3820" stroke-width="3"/>
+            </svg>
+            <div class="art-card-bottom"><span>◉ &nbsp; Visão integrada</span><span>Outubro de 2026</span></div>
+          </div>
+          <div class="floating-note"><span>✦</span><span>Mais perspectiva.<br/><strong>Menos ruído.</strong></span></div>
+        </div>
+      </section>
+
+      <div class="trust-line" aria-label="Valores do Nexo"><span>UMA EXPERIÊNCIA MAIS CALMA</span><i></i><span>DECISÕES COM CONFIANÇA</span><i></i><span>SEU TEMPO, SEU RITMO</span></div>
+
+      <section class="experience section-wrap" id="experiencia" aria-labelledby="experience-title">
+        <div class="section-heading"><p class="eyebrow"><span></span> A EXPERIÊNCIA NEXO</p><h2 id="experience-title">Tudo se conecta quando<br/><em>você enxerga melhor.</em></h2><p>Um espaço pensado para transformar a rotina financeira em direção, sem excesso de telas ou informação.</p></div>
+        <div class="feature-grid">
+          <Card as="article" class="feature-card"><span class="feature-icon">↗</span><span class="feature-number">01 / VISÃO</span><h3>O todo, num olhar.</h3><p>Receitas, despesas e evolução reunidas em um painel que faz sentido no primeiro segundo.</p></Card>
+          <Card as="article" class="feature-card"><span class="feature-icon">◎</span><span class="feature-number">02 / PLANOS</span><h3>Objetivos com direção.</h3><p>Acompanhe suas metas e perceba como cada escolha aproxima você do que realmente importa.</p></Card>
+          <Card as="article" class="feature-card"><span class="feature-icon">✦</span><span class="feature-number">03 / FLUIDEZ</span><h3>Naturalmente simples.</h3><p>Registre movimentos em uma experiência direta, com revisão e controle em cada etapa.</p></Card>
+        </div>
+      </section>
+
+      <section class="pricing section-wrap" id="planos" aria-labelledby="pricing-title">
+        <div class="section-heading centered"><p class="eyebrow"><span></span> INVESTIMENTO EM CLAREZA</p><h2 id="pricing-title">Escolha o seu <em>ritmo.</em></h2><p>Uma mesma experiência premium. A liberdade de decidir como começar.</p></div>
+        <div class="pricing-grid">
+          <Card as="article" class="price-card"><div class="price-top"><span>FLEXÍVEL</span><span class="price-sigil">◇</span></div><h3>Mensal</h3><p>Para descobrir um novo jeito de cuidar do seu dinheiro, mês a mês.</p><div class="price"><small>R$</small>39<span>/mês</span></div><div class="price-rule"></div><ul><li>Visão financeira completa</li><li>Transações e categorias</li><li>Metas em acompanhamento</li><li>Assistente de registro</li></ul><Button class="price-button" data-plan="Mensal">Escolher mensal <span aria-hidden="true">↗</span></Button></Card>
+          <Card as="article" class="price-card featured"><div class="price-top"><span>MAIS VANTAJOSO</span><span class="save-badge">2 meses de economia</span></div><h3>Anual</h3><p>Para construir com constância e aproveitar o melhor valor da experiência.</p><div class="price"><small>R$</small>390<span>/ano</span></div><div class="price-rule"></div><ul><li>Todos os recursos do mensal</li><li>Equivalente a R$ 32,50 por mês</li><li>Economia de R$ 78 no ano</li><li>Uma escolha para o longo prazo</li></ul><Button class="price-button featured-button" data-plan="Anual">Escolher anual <span aria-hidden="true">↗</span></Button></Card>
+        </div>
+        <p class="pricing-note">Preços ilustrativos para esta apresentação. A contratação ainda não está disponível.</p>
+      </section>
+
+      <section class="capture section-wrap" id="lista" aria-labelledby="capture-title">
+        <div class="capture-copy"><p class="eyebrow"><span></span> ACESSO ANTECIPADO</p><h2 id="capture-title">O próximo passo<br/>começa <em>aqui.</em></h2><p>Escolha um plano ilustrativo e registre seu interesse neste navegador.</p><div class="capture-decoration" aria-hidden="true">N / 01</div></div>
+        <div class="capture-form-wrap"><div class="form-top"><span>SEU INTERESSE</span><span>✦ &nbsp; NEXO</span></div><form id="interest-form"><label for="lead-name">Seu nome</label><input id="lead-name" name="name" type="text" autocomplete="name" placeholder="Como podemos chamar você?" maxlength="80" required /><label for="lead-email">Seu e-mail</label><input id="lead-email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" maxlength="254" required /><label for="lead-plan">Plano de interesse</label><select id="lead-plan" name="plan"><option value="Anual">Anual — R$ 390/ano</option><option value="Mensal">Mensal — R$ 39/mês</option></select><Button type="submit" class="submit-button">Salvar meu interesse <span aria-hidden="true">↗</span></Button><p id="form-status" class="form-status" role="status" aria-live="polite" hidden></p><small>Protótipo: registro local neste navegador, sem envio ou reserva de vaga.</small></form></div>
+      </section>
+    </main>
+    <footer class="site-footer"><a href="/" aria-label="Nexo — voltar à página inicial">Nexo<span>.</span></a><div class="site-footer-disclosure"><CompanyTag /><p class="site-footer-privacy-full">Protótipo conceitual · dados inseridos aqui não são enviados nem recebidos pela Auveloir. Privacidade orientada pelos princípios da LGPD.</p><p class="site-footer-privacy-compact">Protótipo · dados locais · princípios da LGPD</p></div><a href="/">Voltar ao painel ↗</a></footer>
+    <script>
+      import '../scripts/custom-selects.js';
+      const planSelect = document.querySelector<HTMLSelectElement>('#lead-plan');
+      const form = document.querySelector<HTMLFormElement>('#interest-form');
+      const status = document.querySelector<HTMLElement>('#form-status');
+      document.querySelectorAll<HTMLButtonElement>('[data-plan]').forEach((button) => {
+        button.addEventListener('click', () => {
+          if (planSelect) {
+            planSelect.value = button.dataset.plan || 'Anual';
+            planSelect.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+          document.querySelector('#lista')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          document.querySelector<HTMLInputElement>('#lead-name')?.focus({ preventScroll: true });
+        });
+      });
+      form?.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!form.reportValidity() || !status) return;
+        const data = new FormData(form);
+        try {
+          localStorage.setItem('nexo-interest', JSON.stringify({
+            name: String(data.get('name') || '').trim(),
+            email: String(data.get('email') || '').trim(),
+            plan: String(data.get('plan') || 'Anual'),
+            savedAt: new Date().toISOString(),
+          }));
+          status.textContent = 'Seu interesse foi salvo neste navegador. O envio externo ainda não está disponível.';
+          status.hidden = false;
+          form.reset();
+        } catch {
+          status.textContent = 'Não foi possível salvar neste navegador. Tente novamente.';
+          status.hidden = false;
+        }
+      });
+    </script>
+  </body>
+</html>

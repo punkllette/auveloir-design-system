@@ -11,3 +11,8 @@ desktop.ini
 
 # Logs & Temp
 *.log
+
+# Astro and npm
+node_modules/
+dist/
+.astro/
