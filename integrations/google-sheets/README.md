@@ -6,6 +6,8 @@
 4. A URL `/exec` fornecida para esta implantação já está configurada em `src/components/ContactCard.astro`. Gere o build e publique. Se criar uma nova implantação no futuro, atualize essa URL ou defina `PUBLIC_GOOGLE_SHEETS_WEB_APP_URL` no `.env` antes do build. **Não** use a URL `/dev`.
 5. Envie um contato de teste pelo site publicado e confirme que ele aparece na aba **Contatos** e que a notificação chega a `mello@auveloir.com`.
 
+Se aparecer **“Função de script não encontrada: doPost”**, a implantação está usando uma versão sem este `Code.gs`. Cole o arquivo completo no projeto **ligado à planilha**, salve e use **Implantar → Gerenciar implantações → Editar → Versão: Nova versão → Implantar**. Confirme que está editando a implantação cuja URL `/exec` está no formulário. Abrir essa URL no navegador deve mostrar **“Formulário AUVELOIR ativo”** depois da atualização; antes disso, a versão correta ainda não foi publicada. Não execute `doPost` pelo botão **Executar** do editor, pois ele exige o evento HTTP fornecido pelo formulário.
+
 O botão envia os dados por POST diretamente ao Apps Script, que valida os campos, grava a planilha e mostra uma confirmação. O Analytics registra apenas a tentativa de envio, sem nome, e-mail ou telefone.
 
 Use uma planilha privada. Quem tiver a URL pública do aplicativo poderá enviar dados; o formulário tem um campo antispam simples e validação, mas pode precisar de proteção adicional se receber abuso.

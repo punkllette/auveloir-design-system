@@ -3,6 +3,11 @@ const SHEET_NAME = 'Contatos';
 const HEADERS = ['Recebido em', 'Nome', 'E-mail', 'Telefone', 'Consentimento'];
 const NOTIFY_EMAIL = 'mello@auveloir.com';
 
+// Abra a URL /exec sem enviar dados para confirmar que esta versão foi publicada.
+function doGet() {
+  return HtmlService.createHtmlOutput('<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>AUVELOIR — formulário ativo</title><body><h1>Formulário AUVELOIR ativo</h1><p>O envio de contatos usa POST.</p></body></html>');
+}
+
 function doPost(request) {
   try {
     const data = request && request.parameter ? request.parameter : {};
