@@ -1,31 +1,23 @@
 /** Cole no Apps Script aberto pela planilha em Extensões > Apps Script. */
 const SHEET_NAME = 'Contatos';
-const HEADERS = ['Recebido em', 'Nome', 'E-mail', 'Telefone', 'Consentimento', 'ID do envio'];
+const HEADERS = ['Recebido em', 'Nome', 'E-mail', 'Telefone', 'Consentimento'];
 const NOTIFY_EMAIL = 'mello@auveloir.com';
 
 // Abra a URL /exec sem enviar dados para confirmar que esta versão foi publicada.
 function doGet() {
-  return HtmlService.createHtmlOutput('<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>AUVELOIR — formulário ativo</title><body><h1>Formulário AUVELOIR ativo</h1><p>Confirmação JSON e ID do envio: versão 2.</p></body></html>');
+  return HtmlService.createHtmlOutput('<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>AUVELOIR — formulário ativo</title><body><h1>Formulário AUVELOIR ativo</h1><p>O envio de contatos usa POST.</p></body></html>');
 }
 
 function doPost(request) {
   try {
     const data = request && request.parameter ? request.parameter : {};
-    const json = data.response_format === 'json';
-    const submissionId = clean_(data.submission_id, 80);
-    const reply = (message, success) => json
-      ? jsonResponse_({ ok: success, saved: success, submissionId: success ? submissionId : undefined, message })
-      : responsePage_(message, success);
-    if (data._honey) return reply('Não foi possível enviar.', false);
+    if (data._honey) return responsePage_('Contato recebido.', true);
 
     const name = clean_(data.name, 120);
     const email = clean_(data.email, 254);
     const phone = clean_(data.telefone, 40);
     if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !/^[+\d\s().-]{8,40}$/.test(phone) || data.consentimento !== 'Sim') {
-      return reply('Confira nome, e-mail, telefone e autorização antes de enviar.', false);
-    }
-    if (json && !/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(submissionId)) {
-      return reply('Identificador de envio inválido.', false);
+      return responsePage_('Confira nome, e-mail, telefone e autorização antes de enviar.', false);
     }
 
     const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
@@ -36,15 +28,9 @@ function doPost(request) {
       let sheet = spreadsheet.getSheetByName(SHEET_NAME);
       if (!sheet) sheet = spreadsheet.insertSheet(SHEET_NAME);
       if (sheet.getLastRow() === 0) sheet.appendRow(HEADERS);
-      if (sheet.getRange(1, 6).getValue() !== HEADERS[5]) sheet.getRange(1, 6).setValue(HEADERS[5]);
-      if (submissionId && sheet.getLastRow() > 1) {
-        const existing = sheet.getRange(2, 6, sheet.getLastRow() - 1, 1)
-          .createTextFinder(submissionId).matchEntireCell(true).findNext();
-        if (existing) return reply('Contato já recebido. Obrigado!', true);
-      }
       const row = sheet.getLastRow() + 1;
       sheet.getRange(row, 4).setNumberFormat('@');
-      sheet.getRange(row, 1, 1, 6).setValues([[new Date(), safeCell_(name), safeCell_(email), safeCell_(phone), 'Sim', submissionId]]);
+      sheet.getRange(row, 1, 1, 5).setValues([[new Date(), safeCell_(name), safeCell_(email), safeCell_(phone), 'Sim']]);
       SpreadsheetApp.flush();
     } finally {
       lock.releaseLock();
@@ -61,18 +47,11 @@ function doPost(request) {
     } catch (notificationError) {
       console.error('Contato salvo, mas a notificação falhou:', notificationError);
     }
-    return reply('Contato recebido. Obrigado!', true);
+    return responsePage_('Contato recebido. Obrigado!', true);
   } catch (error) {
     console.error('Não foi possível salvar o contato:', error);
-    if (request && request.parameter && request.parameter.response_format === 'json') {
-      return jsonResponse_({ ok: false, saved: false, message: 'Não foi possível confirmar o envio.' });
-    }
     return responsePage_('Não foi possível enviar agora. Tente novamente ou escreva para mello@auveloir.com.', false);
   }
-}
-
-function jsonResponse_(payload) {
-  return ContentService.createTextOutput(JSON.stringify(payload)).setMimeType(ContentService.MimeType.JSON);
 }
 
 function clean_(value, maxLength) {
