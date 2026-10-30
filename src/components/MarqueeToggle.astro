@@ -1,0 +1,30 @@
+<button class="marquee-toggle" type="button" aria-controls="experiments-marquee" aria-pressed="false">Pausar movimento</button>
+
+<style>
+  .marquee-toggle {
+    display: block;
+    min-height: 44px;
+    margin: 0 auto;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    font: 500 0.75rem var(--font-mono);
+    cursor: pointer;
+  }
+
+  .marquee-toggle:hover,
+  .marquee-toggle:focus-visible {
+    border-color: var(--primary-light);
+  }
+
+  .marquee-toggle:focus-visible {
+    outline: 2px solid var(--primary-light);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-toggle { display: none; }
+  }
+</style>

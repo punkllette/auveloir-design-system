@@ -4,6 +4,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import TimelineCard from '../components/TimelineCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import ExperimentCard from '../components/ExperimentCard.astro';
+import MarqueeToggle from '../components/MarqueeToggle.astro';
 import ContactCard from '../components/ContactCard.astro';
 import { timeline, projects, experiments } from '../data/portfolio';
 ---
@@ -143,7 +144,7 @@ import { timeline, projects, experiments } from '../data/portfolio';
 
 
 
-            <button class="marquee-toggle" type="button" aria-controls="experiments-marquee" aria-pressed="false">Pausar movimento</button>
+            <MarqueeToggle />
             <div class="marquee-container" id="experiments-marquee" role="region" aria-label="Experimentos" tabindex="0">
                 <div class="marquee-content">
                     {experiments.map((experiment) => <ExperimentCard {...experiment} />)}

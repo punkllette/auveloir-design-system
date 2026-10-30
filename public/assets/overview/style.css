@@ -2857,24 +2857,6 @@ body {
 
 }
 
-.marquee-toggle {
-  display: block;
-  margin: 0 auto;
-  padding: 0.7rem 1rem;
-  min-height: 44px;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--bg-card);
-  color: var(--text-main);
-  font: 500 0.75rem var(--font-mono);
-  cursor: pointer;
-}
-
-.marquee-toggle:hover,
-.marquee-toggle:focus-visible {
-  border-color: var(--primary-light);
-}
-
 .marquee-container.is-paused {
   overflow-x: auto;
   mask-image: none;
@@ -3906,7 +3888,6 @@ body.in-catalog-iframe .hero {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee-toggle { display: none; }
   .marquee-container {
     mask-image: none;
     -webkit-mask-image: none;
