@@ -3884,3 +3884,10 @@ body.in-catalog-iframe .hero {
 
 /* First-screen copy is visible on the first paint, including slow mobile CPUs. */
 .hero-text .animate-blur-in, .hero-text .animate-fade-up, .glass-nav.animate-fade-up { animation: none; }
+
+/* Suspend continuous decorations without resetting their animation position. */
+.motion-idle .animate-float,
+.motion-idle .marquee-content,
+.motion-idle .beam-border::after {
+  animation-play-state: paused;
+}

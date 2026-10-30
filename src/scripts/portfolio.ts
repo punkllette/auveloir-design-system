@@ -10,6 +10,27 @@ function initializePortfolio() {
 
   const controller = new AbortController();
   const timers: number[] = [];
+  // Keep decorative loops idle outside the viewport and in background tabs.
+  const motionSections = document.querySelectorAll<HTMLElement>('.hero-section, .testimonials-section, .cta-section');
+  const visibleSections = new Set<Element>();
+  const syncMotion = () => {
+    motionSections.forEach((section) => {
+      section.classList.toggle('motion-idle', document.hidden || !visibleSections.has(section));
+    });
+  };
+  let motionObserver: IntersectionObserver | undefined;
+  if ('IntersectionObserver' in window) {
+    motionSections.forEach((section) => section.classList.add('motion-idle'));
+    motionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) visibleSections.add(entry.target);
+        else visibleSections.delete(entry.target);
+      });
+      syncMotion();
+    });
+    motionSections.forEach((section) => motionObserver?.observe(section));
+    document.addEventListener('visibilitychange', syncMotion, { signal: controller.signal });
+  }
   const marquee = main.querySelector<HTMLElement>('.marquee-container');
   const marqueeToggle = main.querySelector<HTMLButtonElement>('.marquee-toggle');
   marqueeToggle?.addEventListener('click', () => {
@@ -80,6 +101,8 @@ function initializePortfolio() {
   updateTimelineProgress();
 
   disposePage = () => {
+    motionObserver?.disconnect();
+    motionSections.forEach((section) => section.classList.remove('motion-idle'));
     revealObserver?.disconnect();
     controller.abort();
     cancelAnimationFrame(progressFrame);
