@@ -10,8 +10,9 @@ if (!/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(sheetsWebAp
   <h2 class="headline" style="font-family: var(--font-display);">Vamos construir algo <span>extraordinário?</span></h2>
   <p class="cta-subtitle">Deixe seu nome, e-mail e telefone. Entrarei em contato para conversar sobre seu projeto.</p>
 
-  <form class="contact-capture" data-track-contact="true" action={sheetsWebAppURL} method="POST">
+  <form class="contact-capture" data-track-contact="true" action={sheetsWebAppURL} method="POST" data-contact-form>
     <input class="contact-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <input type="hidden" name="submission_id" value="" />
 
     <div class="contact-fields">
       <label class="contact-name" for="contact-name">Nome
@@ -31,13 +32,66 @@ if (!/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(sheetsWebAp
     </label>
     <p class="contact-privacy">Seus dados serão usados apenas para responder ao seu contato e enviados à planilha da AUVELOIR pelo Google.</p>
 
-    <button class="btn-beam cta-large" type="submit">
+    <p class="contact-feedback" data-contact-feedback role="alert" hidden></p>
+    <button class="btn-beam cta-large" type="submit" data-contact-submit>
       <span class="beam-border" aria-hidden="true"></span>
       <span class="btn-content-bg" aria-hidden="true"><span class="bottom-glow"></span></span>
       <span class="contact-submit-label">Enviar meu contato <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
     </button>
   </form>
+  <div class="contact-success" data-contact-success hidden aria-live="polite">
+    <span class="contact-success-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="21" stroke="currentColor" stroke-width="2"/><path d="m14 24 7 7 13-14" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <h3 tabindex="-1" data-success-title>Mensagem enviada com sucesso.</h3>
+    <p>Obrigado pelo contato! Sua mensagem foi recebida. Em breve, retornarei pelo e-mail ou telefone informado.</p>
+    <a class="contact-return" href="/">Voltar ao portfólio</a>
+  </div>
 </div>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+  // Ative somente na prévia de teste; produção mantém o POST direto até validar a implantação JSON.
+  if (form && import.meta.env.PUBLIC_CONTACT_INLINE_CONFIRMATION === 'true') {
+    const button = form.querySelector<HTMLButtonElement>('[data-contact-submit]')!;
+    const label = form.querySelector<HTMLElement>('.contact-submit-label')!;
+    const feedback = form.querySelector<HTMLElement>('[data-contact-feedback]')!;
+    const success = document.querySelector<HTMLElement>('[data-contact-success]')!;
+    const title = success.querySelector<HTMLElement>('[data-success-title]')!;
+    const idInput = form.querySelector<HTMLInputElement>('[name="submission_id"]')!;
+    const originalLabel = label.innerHTML;
+    let pending = false;
+    form.addEventListener('input', () => { feedback.hidden = true; idInput.value = ''; });
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (pending || !form.reportValidity()) return;
+      if (!idInput.value) idInput.value = crypto.randomUUID();
+      pending = true;
+      button.disabled = true;
+      form.setAttribute('aria-busy', 'true');
+      feedback.hidden = true;
+      label.textContent = 'Enviando...';
+      try {
+        const response = await fetch('/api/contact', { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        const result = await response.json();
+        if (response.ok && result.ok === true) {
+          form.hidden = true;
+          success.hidden = false;
+          title.focus();
+          if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { method: 'contact_form' });
+          return;
+        }
+        throw new Error(result.message || 'Não foi possível confirmar o envio. Tente novamente.');
+      } catch (error) {
+        feedback.textContent = error instanceof Error ? error.message : 'Não foi possível confirmar o envio. Tente novamente.';
+        feedback.hidden = false;
+      } finally {
+        pending = false;
+        button.disabled = false;
+        form.removeAttribute('aria-busy');
+        label.innerHTML = originalLabel;
+      }
+    });
+  }
+</script>
 
 <style>
   .contact-capture { max-width: 620px; margin: 2rem auto 0; text-align: left; }
@@ -53,5 +107,20 @@ if (!/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(sheetsWebAp
   .contact-honey { position: absolute; left: -9999px; width: 1px; height: 1px; }
   .contact-capture button { display: flex; margin: 0 auto; font-family: inherit; }
   .contact-submit-label { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: .65rem; }
+  .contact-capture[hidden], .contact-success[hidden], .contact-feedback[hidden] { display: none; }
+  .contact-capture button:disabled { opacity: .65; cursor: wait; }
+  .contact-feedback { color: #ff9ba8; text-align: center; margin: 0 0 1rem; font-size: .85rem; }
+  .contact-success { max-width: 620px; margin: 2rem auto 0; text-align: center; animation: contact-appear .55s ease both; }
+  .contact-success-icon { display: inline-flex; width: 70px; height: 70px; color: var(--primary-light); margin-bottom: 1rem; }
+  .contact-success-icon svg { width: 100%; height: 100%; }
+  .contact-success-icon path { stroke-dasharray: 28; stroke-dashoffset: 28; animation: contact-check .55s .25s ease forwards; }
+  .contact-success h3 { color: var(--text-main); font-family: var(--font-display); font-size: clamp(1.45rem, 3vw, 2rem); margin: 0 0 .75rem; }
+  .contact-success h3:focus { outline: none; }
+  .contact-success p { color: var(--text-secondary); line-height: 1.6; margin: 0 auto 1.5rem; }
+  .contact-return { display: inline-flex; justify-content: center; align-items: center; min-height: 48px; padding: .75rem 1.5rem; border: 1px solid var(--border); border-radius: 999px; color: var(--text-main); text-decoration: none; }
+  .contact-return:hover, .contact-return:focus-visible { border-color: var(--primary-light); color: var(--primary-light); }
+  @keyframes contact-appear { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes contact-check { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) { .contact-success, .contact-success-icon path { animation: none; } .contact-success-icon path { stroke-dashoffset: 0; } }
   @media (max-width: 600px) { .contact-fields { grid-template-columns: 1fr; } .contact-capture button { width: 100%; } }
 </style>
