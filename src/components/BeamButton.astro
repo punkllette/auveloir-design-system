@@ -2,14 +2,15 @@
 interface Props {
   href: string;
   large?: boolean;
+  trackContact?: boolean;
 }
 
-const { href, large = false } = Astro.props;
+const { href, large = false, trackContact = false } = Astro.props;
 const contentStyle = large
   ? 'position: relative; z-index: 10; display: flex; align-items: center; justify-content: center; gap: 0.6rem;'
   : 'position: relative; z-index: 10; display: flex; align-items: center;';
 ---
-<a href={href} class={large ? 'btn-beam cta-large' : 'btn-beam'}>
+<a href={href} class={large ? 'btn-beam cta-large' : 'btn-beam'} data-track-contact={trackContact ? 'true' : undefined}>
   <div class="beam-border" aria-hidden="true"></div>
   <div class="btn-content-bg" aria-hidden="true">
     <div class="bottom-glow"></div>
