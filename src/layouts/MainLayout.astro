@@ -1,0 +1,47 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import SiteNavbar from '../components/SiteNavbar.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogDescription?: string;
+}
+
+const {
+  title = 'AUVELOIR — Design System & Portfolio',
+  description = 'Mello, estúdio digital independente da AUVELOIR. Projetos de design e desenvolvimento web com foco em experiências digitais, funcionalidade e performance.',
+  ogDescription = 'Presença digital à altura do que você faz. Conheça os projetos e experiências digitais de Mello.',
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#090B10" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={ogDescription} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/overview/fonts.css" />
+    <link rel="stylesheet" href="/assets/overview/style.css" />
+    <ClientRouter />
+    <script is:inline defer src="https://unpkg.com/lucide@latest"></script>
+    <script is:inline defer src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Ir para o conteúdo</a>
+    <SiteNavbar />
+    <slot name="header" />
+    <main id="main-content" tabindex="-1"><slot /></main>
+    <SiteFooter />
+  </body>
+</html>

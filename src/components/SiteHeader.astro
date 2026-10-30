@@ -1,50 +1,12 @@
 ---
 import BeamButton from './BeamButton.astro';
-import NavButton from './NavButton.astro';
+
 ---
-    <nav class="glass-nav animate-fade-up">
-
-        <a href="#" style="display: flex; align-items: center; gap: 0.85rem; text-decoration: none;">
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="30" height="30" role="img" aria-label="AUVELOIR">
-
-                <path d="M48.85298 17.85867 A22 22 0 1 0 53.25037 37.69402" stroke="#F0F1F3" stroke-width="4.2" fill="none" stroke-linecap="round"/>
-
-                <circle cx="53.47851" cy="27.23833" r="4.2" fill="#C41632"/>
-
-            </svg>
-
-            <span style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 700; color: var(--text-main); letter-spacing: 0.08em;">AUVELOIR</span>
-
-        </a>
-
-        <div class="nav-links">
-
-            <a href="#about">Resumo</a>
-
-            <a href="#projects">Projetos</a>
-
-            <a href="#contact">Contato</a>
-
-        </div>
-
-        <details class="mobile-nav">
-            <summary>Menu <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
-            <div class="mobile-nav-panel">
-                <a href="#about">Resumo</a>
-                <a href="#projects">Projetos</a>
-                <a href="#contact">Contato</a>
-                <a class="mobile-nav-cta" href="#contact">Iniciar Projeto</a>
-            </div>
-        </details>
-
-        <NavButton href="#contact">Iniciar Projeto</NavButton>
-
-    </nav>
 
 
 
-    <header class="hero-section hero" id="hero">
+
+    <header class="hero-section hero" id="hero" transition:persist="site-header">
 
         <!-- Atmosfera de fundo Void Black com iluminação Event Red contida -->
 
@@ -209,13 +171,3 @@ import NavButton from './NavButton.astro';
         </div>
 
     </header>
-<script is:inline>
-  const mobileNav = document.querySelector('.mobile-nav');
-  mobileNav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { mobileNav.open = false; }));
-  mobileNav?.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
-      mobileNav.open = false;
-      mobileNav.querySelector('summary').focus();
-    }
-  });
-</script>

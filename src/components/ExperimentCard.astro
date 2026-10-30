@@ -20,7 +20,7 @@ const {
 ---
 <div class="testimonial-card" aria-hidden={duplicate ? 'true' : undefined} style="border-top: 2px solid var(--primary-border);">
   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">{category} &bull; EXP. {number}</span>
+    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--primary-light); background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 500;">{category} &bull; EXP. {number}</span>
     <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">STATUS: {status}</span>
   </div>
   <p class="testimonial-text"><strong>{title}</strong> {descriptionBefore}{emphasis && <em>{emphasis}</em>}{descriptionAfter}</p>
