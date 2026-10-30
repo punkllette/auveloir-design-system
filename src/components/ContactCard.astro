@@ -3,7 +3,7 @@
 <div class="cta-card">
   <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--primary-light); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem;">DIREÇÃO DE PROJETOS · AUVELOIR</div>
   <h2 class="headline" style="font-family: var(--font-display);">Vamos construir algo <span>extraordinário?</span></h2>
-  <p class="cta-subtitle">Deixe seu e-mail e telefone. Entrarei em contato para conversar sobre seu projeto.</p>
+  <p class="cta-subtitle">Deixe seu nome, e-mail e telefone. Entrarei em contato para conversar sobre seu projeto.</p>
 
   <form class="contact-capture" data-track-contact="true" action="https://formsubmit.co/auveloir@gmail.com" method="POST">
     <input type="hidden" name="_subject" value="Novo contato pelo portfólio AUVELOIR" />
@@ -12,6 +12,9 @@
     <input class="contact-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
     <div class="contact-fields">
+      <label class="contact-name" for="contact-name">Nome
+        <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Seu nome" required />
+      </label>
       <label for="contact-email">E-mail
         <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="seu@email.com" required />
       </label>
@@ -37,6 +40,7 @@
 <style>
   .contact-capture { max-width: 620px; margin: 2rem auto 0; text-align: left; }
   .contact-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .contact-name { grid-column: 1 / -1; }
   .contact-fields label { display: grid; gap: .5rem; color: var(--text-main); font-size: .85rem; font-weight: 600; }
   .contact-fields input { width: 100%; min-height: 52px; padding: .8rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--bg-surface); color: var(--text-main); font: inherit; }
   .contact-fields input::placeholder { color: var(--text-muted); }
@@ -45,7 +49,7 @@
   .contact-consent input { width: 18px; height: 18px; flex: none; margin-top: .12rem; accent-color: var(--primary-light); }
   .contact-privacy { margin: .6rem 0 1.5rem; color: var(--text-muted); font-size: .75rem; line-height: 1.5; }
   .contact-honey { position: absolute; left: -9999px; width: 1px; height: 1px; }
-  .contact-capture button { font-family: inherit; }
+  .contact-capture button { display: flex; margin: 0 auto; font-family: inherit; }
   .contact-submit-label { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: .65rem; }
   @media (max-width: 600px) { .contact-fields { grid-template-columns: 1fr; } .contact-capture button { width: 100%; } }
 </style>
