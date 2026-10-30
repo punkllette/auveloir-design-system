@@ -1,0 +1,22 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout title="Contato enviado — AUVELOIR" description="Obrigado pelo contato com a AUVELOIR." noindex>
+  <section class="thanks">
+    <div class="thanks-inner">
+      <span class="thanks-kicker">AUVELOIR · CONTATO</span>
+      <h1 class="headline">Obrigado pelo contato.</h1>
+      <p>Recebi seus dados e retornarei pelo e-mail ou telefone informado.</p>
+      <a href="/">Voltar ao portfólio ↗</a>
+    </div>
+  </section>
+</MainLayout>
+<style>
+  .thanks { min-height: 80vh; display: grid; place-items: center; padding: 8rem 1.5rem; }
+  .thanks-inner { max-width: 720px; text-align: center; }
+  .thanks-kicker { color: var(--primary-light); font-family: var(--font-mono); font-size: .8rem; letter-spacing: .12em; }
+  .thanks h1 { margin: 1.5rem 0; }
+  .thanks p { color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6; }
+  .thanks a { display: inline-flex; margin-top: 2rem; color: var(--primary-light); font-weight: 600; }
+  .thanks a:focus-visible { outline: 2px solid var(--primary-light); outline-offset: 4px; }
+</style>

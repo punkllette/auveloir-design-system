@@ -1,16 +1,51 @@
----
-import Icon from './Icon.astro';
-import BeamButton from './BeamButton.astro';
+﻿---
 ---
 <div class="cta-card">
   <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--primary-light); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem;">DIREÇÃO DE PROJETOS · AUVELOIR</div>
   <h2 class="headline" style="font-family: var(--font-display);">Vamos construir algo <span>extraordinário?</span></h2>
-  <p class="cta-subtitle">Laboratório independente aberto para novas conexões, projetos desafiadores e desenvolvimento de interfaces de alto nível.</p>
-  <div class="cta-action">
-    <span class="cta-action-text">Ideias em construção. O sistema cria reconhecimento, o trabalho cria reputação.</span>
-    <BeamButton href="mailto:auveloir@gmail.com" large trackContact>
-      Iniciar uma Conversa
-      <Icon name="lucide:arrow-up-right" style="width: 1.2rem; height: 1.2rem;" />
-    </BeamButton>
-  </div>
+  <p class="cta-subtitle">Deixe seu e-mail e telefone. Entrarei em contato para conversar sobre seu projeto.</p>
+
+  <form class="contact-capture" data-track-contact="true" action="https://formsubmit.co/auveloir@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Novo contato pelo portfólio AUVELOIR" />
+    <input type="hidden" name="_next" value="https://www.auveloir.com/obrigado/" />
+    <input type="hidden" name="_captcha" value="false" />
+    <input class="contact-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+    <div class="contact-fields">
+      <label for="contact-email">E-mail
+        <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="seu@email.com" required />
+      </label>
+      <label for="contact-phone">Telefone ou WhatsApp
+        <input id="contact-phone" name="telefone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(00) 00000-0000" required />
+      </label>
+    </div>
+
+    <label class="contact-consent">
+      <input name="consentimento" type="checkbox" value="Sim" required />
+      <span>Autorizo o contato da AUVELOIR por e-mail ou telefone sobre meu pedido.</span>
+    </label>
+    <p class="contact-privacy">Seus dados serão usados apenas para responder ao seu contato e enviados pelo serviço FormSubmit.</p>
+
+    <button class="btn-beam cta-large" type="submit">
+      <span class="beam-border" aria-hidden="true"></span>
+      <span class="btn-content-bg" aria-hidden="true"><span class="bottom-glow"></span></span>
+      <span class="contact-submit-label">Enviar meu contato <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
+    </button>
+  </form>
 </div>
+
+<style>
+  .contact-capture { max-width: 620px; margin: 2rem auto 0; text-align: left; }
+  .contact-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .contact-fields label { display: grid; gap: .5rem; color: var(--text-main); font-size: .85rem; font-weight: 600; }
+  .contact-fields input { width: 100%; min-height: 52px; padding: .8rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--bg-surface); color: var(--text-main); font: inherit; }
+  .contact-fields input::placeholder { color: var(--text-muted); }
+  .contact-fields input:focus-visible, .contact-consent input:focus-visible, .contact-capture button:focus-visible { outline: 2px solid var(--primary-light); outline-offset: 3px; }
+  .contact-consent { display: flex; align-items: flex-start; gap: .65rem; margin-top: 1.25rem; color: var(--text-secondary); font-size: .85rem; line-height: 1.5; cursor: pointer; }
+  .contact-consent input { width: 18px; height: 18px; flex: none; margin-top: .12rem; accent-color: var(--primary-light); }
+  .contact-privacy { margin: .6rem 0 1.5rem; color: var(--text-muted); font-size: .75rem; line-height: 1.5; }
+  .contact-honey { position: absolute; left: -9999px; width: 1px; height: 1px; }
+  .contact-capture button { font-family: inherit; }
+  .contact-submit-label { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: .65rem; }
+  @media (max-width: 600px) { .contact-fields { grid-template-columns: 1fr; } .contact-capture button { width: 100%; } }
+</style>

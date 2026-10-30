@@ -12,3 +12,14 @@ document.addEventListener('click', (event) => {
     event_label: 'iniciar_uma_conversa',
   });
 });
+
+document.addEventListener('submit', (event) => {
+  const form = event.target;
+  if (!(form instanceof HTMLFormElement) || form.dataset.trackContact !== 'true') return;
+  // Track the form intent without sending email or phone to Analytics.
+  window.gtag?.('event', 'contact_form_submit', {
+    method: 'contact_form',
+    event_category: 'contact',
+    event_label: 'enviar_meu_contato',
+  });
+});

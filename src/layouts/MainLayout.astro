@@ -10,6 +10,7 @@ interface Props {
   ogDescription?: string;
   canonicalURL?: string;
   image?: string;
+  noindex?: boolean;
 }
 
 const {
@@ -24,6 +25,19 @@ const imageURL = new URL(Astro.props.image ?? '/images/og-default.jpg', siteURL)
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
+<!-- Meta Pixel Code -->
+<script is:inline>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1110591385090465');
+fbq('track', 'PageView');
+</script>
 <!-- Google Analytics -->
 <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-4VKWS9Y7E4"></script>
 <script is:inline>
@@ -44,6 +58,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="description" content={description} />
+    {Astro.props.noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalURL} />
     <meta name="theme-color" content="#090B10" />
     <meta property="og:type" content="website" />
@@ -63,6 +78,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script is:inline defer src="/assets/track-contact-click.js"></script>
   </head>
   <body>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1110591385090465&amp;ev=PageView&amp;noscript=1" /></noscript>
+<!-- End Meta Pixel Code -->
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T748W2KW"
 height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
