@@ -14,5 +14,8 @@ desktop.ini
 
 # Astro and npm
 node_modules/
+.env
+.env.*
+!.env.example
 dist/
 .astro/

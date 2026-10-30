@@ -1,14 +1,16 @@
-﻿---
+---
+const defaultSheetsWebAppURL = 'https://script.google.com/macros/s/AKfycbwsXrI5urHYcnjTkCVkh7LhV56jJO0MmuNkJx3GVCGMh1ZIcYNUZSxBQBSDnmiY2rDa/exec';
+const sheetsWebAppURL = import.meta.env.PUBLIC_GOOGLE_SHEETS_WEB_APP_URL?.trim() || defaultSheetsWebAppURL;
+if (!/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(sheetsWebAppURL)) {
+  throw new Error('PUBLIC_GOOGLE_SHEETS_WEB_APP_URL deve ser a URL /exec de uma implantação do Google Apps Script.');
+}
 ---
 <div class="cta-card">
   <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--primary-light); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem;">DIREÇÃO DE PROJETOS · AUVELOIR</div>
   <h2 class="headline" style="font-family: var(--font-display);">Vamos construir algo <span>extraordinário?</span></h2>
   <p class="cta-subtitle">Deixe seu nome, e-mail e telefone. Entrarei em contato para conversar sobre seu projeto.</p>
 
-  <form class="contact-capture" data-track-contact="true" action="https://formsubmit.co/auveloir@gmail.com" method="POST">
-    <input type="hidden" name="_subject" value="Novo contato pelo portfólio AUVELOIR" />
-    <input type="hidden" name="_next" value="https://www.auveloir.com/obrigado/" />
-    <input type="hidden" name="_captcha" value="false" />
+  <form class="contact-capture" data-track-contact="true" action={sheetsWebAppURL} method="POST">
     <input class="contact-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
     <div class="contact-fields">
@@ -27,7 +29,7 @@
       <input name="consentimento" type="checkbox" value="Sim" required />
       <span>Autorizo o contato da AUVELOIR por e-mail ou telefone sobre meu pedido.</span>
     </label>
-    <p class="contact-privacy">Seus dados serão usados apenas para responder ao seu contato e enviados pelo serviço FormSubmit.</p>
+    <p class="contact-privacy">Seus dados serão usados apenas para responder ao seu contato e enviados à planilha da AUVELOIR pelo Google.</p>
 
     <button class="btn-beam cta-large" type="submit">
       <span class="beam-border" aria-hidden="true"></span>
