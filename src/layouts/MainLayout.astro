@@ -8,6 +8,8 @@ interface Props {
   title?: string;
   description?: string;
   ogDescription?: string;
+  canonicalURL?: string;
+  image?: string;
 }
 
 const {
@@ -15,6 +17,9 @@ const {
   description = 'Mello, estúdio digital independente da AUVELOIR. Projetos de design e desenvolvimento web com foco em experiências digitais, funcionalidade e performance.',
   ogDescription = 'Presença digital à altura do que você faz. Conheça os projetos e experiências digitais de Mello.',
 } = Astro.props;
+const siteURL = Astro.site ?? Astro.url;
+const canonicalURL = new URL(Astro.props.canonicalURL ?? Astro.url.pathname, siteURL).href;
+const imageURL = new URL(Astro.props.image ?? '/images/og-default.jpg', siteURL).href;
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -23,11 +28,18 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
     <meta name="theme-color" content="#090B10" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={ogDescription} />
+    <meta property="og:image" content={imageURL} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={ogDescription} />
+    <meta name="twitter:image" content={imageURL} />
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
