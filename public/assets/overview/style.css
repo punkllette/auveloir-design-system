@@ -389,9 +389,9 @@ body {
 
 @keyframes blurIn {
 
-  0% { opacity: 0; filter: blur(20px); transform: scale(0.97); }
+  0% { opacity: 0; transform: scale(0.97); }
 
-  100% { opacity: 1; filter: blur(0); transform: scale(1); }
+  100% { opacity: 1; transform: scale(1); }
 
 }
 
@@ -1717,13 +1717,14 @@ body {
 
   left: 50%;
 
-  transform: translateX(-50%);
+  transform: translateX(-50%) scaleY(0);
 
   top: 0;
 
   width: 3px;
 
-  height: 0;
+  height: 100%;
+  transform-origin: top;
 
   background: linear-gradient(to bottom, var(--primary), var(--primary-light));
 
@@ -1731,7 +1732,7 @@ body {
 
   border-radius: 2px;
 
-  transition: height 0.1s linear;
+  transition: transform 0.1s linear;
 
 }
 
@@ -3880,3 +3881,6 @@ body.in-catalog-iframe .hero {
   .marquee-content .testimonial-card:nth-child(n+6) { display: none; }
 }
 
+
+/* First-screen copy is visible on the first paint, including slow mobile CPUs. */
+.hero-text .animate-blur-in, .hero-text .animate-fade-up, .glass-nav.animate-fade-up { animation: none; }

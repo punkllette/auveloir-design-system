@@ -3,7 +3,6 @@ let disposePage = () => {};
 function initializePortfolio() {
   disposePage();
   document.body.classList.toggle('in-catalog-iframe', window.self !== window.top);
-  (window as Window & { lucide?: { createIcons: () => void } }).lucide?.createIcons();
 
   const main = document.getElementById('main-content');
   const grid = main?.querySelector('.projects-grid');
@@ -47,13 +46,13 @@ function initializePortfolio() {
     if (!progressLine || !timelineBody) return;
     const rect = timelineBody.getBoundingClientRect();
     const startScroll = rect.top - window.innerHeight / 2;
-    if (startScroll < 0) {
-      const progress = Math.min(Math.max((Math.abs(startScroll) / rect.height) * 100, 0), 100);
-      progressLine.style.height = `${progress}%`;
+    {
+      const progress = Math.min(Math.max((Math.max(-startScroll, 0) / rect.height) * 100, 0), 100);
+      progressLine.style.transform = `translateX(-50%) scaleY(${progress / 100})`;
     }
   };
 
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) {
     main.querySelectorAll<HTMLElement>('.project-card').forEach((card) => {
       card.addEventListener('mousemove', (event) => {
         const rect = card.getBoundingClientRect();
@@ -71,15 +70,21 @@ function initializePortfolio() {
     });
   }
 
-  window.addEventListener('scroll', updateTimelineProgress, { passive: true, signal: controller.signal });
-  window.addEventListener('resize', updateTimelineProgress, { signal: controller.signal });
+  let progressFrame = 0;
+  const scheduleProgress = () => {
+    if (progressFrame) return;
+    progressFrame = requestAnimationFrame(() => { progressFrame = 0; updateTimelineProgress(); });
+  };
+  window.addEventListener('scroll', scheduleProgress, { passive: true, signal: controller.signal });
+  window.addEventListener('resize', scheduleProgress, { signal: controller.signal });
   updateTimelineProgress();
 
   disposePage = () => {
     revealObserver?.disconnect();
     controller.abort();
+    cancelAnimationFrame(progressFrame);
     timers.forEach((timer) => clearTimeout(timer));
   };
 }
 
-document.addEventListener('astro:page-load', initializePortfolio);
+initializePortfolio();

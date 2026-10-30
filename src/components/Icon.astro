@@ -1,0 +1,12 @@
+---
+import icons from '../data/icons.json';
+interface Props { name: string; style?: string; }
+const { name, style } = Astro.props;
+const svg = icons[name as keyof typeof icons];
+if (!svg) throw new Error(`Unknown icon: ${name}`);
+---
+<span class="static-icon" style={style} aria-hidden="true" set:html={svg} />
+<style>
+.static-icon { display: inline-flex; width: 1em; height: 1em; flex-shrink: 0; }
+.static-icon :global(svg) { width: 100%; height: 100%; }
+</style>

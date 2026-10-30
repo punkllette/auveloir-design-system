@@ -28,7 +28,7 @@ const imageError = `this.onerror=null; this.parentElement.querySelector('source'
   <div class="project-inner-grid"></div>
   <div class="project-img-wrapper">
     <picture>
-      <source srcset={webp} type="image/webp" />
+      <source srcset={`${webp.replace(".webp", "-480.webp")} 480w, ${webp.replace(".webp", "-800.webp")} 800w, ${webp} ${width}w`} sizes="(max-width: 768px) 92vw, (max-width: 1024px) 80vw, 60vw" type="image/webp" />
       <img src={png} width={width} height={height} loading="lazy" decoding="async" alt={alt} onerror={imageError} />
     </picture>
   </div>
