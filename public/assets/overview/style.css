@@ -3318,23 +3318,7 @@ body {
 
 
 
-.footer-contact {
 
-  color: var(--text-secondary);
-
-  text-decoration: none;
-
-  transition: color var(--transition-fast);
-
-}
-
-.footer-contact:hover,
-.footer-contact:focus-visible { color: var(--primary); }
-
-.footer-contact:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 4px;
-}
 
 
 
