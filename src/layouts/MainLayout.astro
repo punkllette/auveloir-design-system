@@ -45,3 +45,23 @@ const {
     <SiteFooter />
   </body>
 </html>
+
+<style>
+  .skip-link {
+    position: fixed;
+    top: 0;
+    left: 1rem;
+    z-index: 1000;
+    transform: translateY(-150%);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    background: #C41632;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .skip-link:focus-visible {
+    top: 1rem;
+    transform: none;
+  }
+</style>

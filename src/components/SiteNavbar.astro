@@ -26,6 +26,15 @@ import NavButton from './NavButton.astro';
   <NavButton href="/#contact">Iniciar Projeto</NavButton>
 </nav>
 
+<style>
+  .mobile-nav { display: none; }
+
+  @media (max-width: 1024px) {
+    .nav-links { display: none; }
+    .mobile-nav { display: block; }
+  }
+</style>
+
 <script>
   function bindMobileMenu() {
     const menu = document.querySelector<HTMLDetailsElement>('.mobile-nav');
