@@ -1,8 +1,8 @@
 ---
 const defaultSheetsWebAppURL = 'https://script.google.com/macros/s/AKfycby_aV7dL-40t1ZBFCwOGIJH8003Lx8uFBBa9AGQI7o1wcKvuK5Yd5t-CFsvbliMzzJ6/exec';
-const sheetsWebAppURL = (import.meta as ImportMeta & { env: { PUBLIC_GOOGLE_SHEETS_WEB_APP_URL?: string } }).env.PUBLIC_GOOGLE_SHEETS_WEB_APP_URL?.trim() || defaultSheetsWebAppURL;
+const sheetsWebAppURL = defaultSheetsWebAppURL;
 if (!/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(sheetsWebAppURL)) {
-  throw new Error('PUBLIC_GOOGLE_SHEETS_WEB_APP_URL deve ser a URL /exec de uma implantação do Google Apps Script.');
+  throw new Error('A URL do Google Apps Script deve ser uma implantação /exec.');
 }
 ---
 <div class="cta-card">
