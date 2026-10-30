@@ -1,5 +1,5 @@
 ---
-const defaultSheetsWebAppURL = 'https://script.google.com/macros/s/AKfycbwsXrI5urHYcnjTkCVkh7LhV56jJO0MmuNkJx3GVCGMh1ZIcYNUZSxBQBSDnmiY2rDa/exec';
+const defaultSheetsWebAppURL = 'https://script.google.com/macros/s/AKfycbzf65G8GSNOms0FGt0K6UZmnhgDGVReZtJBelgUSc63wet2WgGgQ_8lzZKgghCm734K/exec';
 const sheetsWebAppURL = import.meta.env.PUBLIC_GOOGLE_SHEETS_WEB_APP_URL?.trim() || defaultSheetsWebAppURL;
 if (!/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(sheetsWebAppURL)) {
   throw new Error('PUBLIC_GOOGLE_SHEETS_WEB_APP_URL deve ser a URL /exec de uma implantação do Google Apps Script.');
