@@ -22,14 +22,20 @@ const {
   href, accessibleLabel, featured = false, accentRgb, webp, png, width, height,
   alt, fallback, company, year, action, titleTop, titleBottom, description,
 } = Astro.props;
-const imageError = `this.onerror=null; this.parentElement.querySelector('source')?.remove(); this.src=${JSON.stringify(fallback)};`;
+const imageWidths = [...new Set([480, 800, 1200, width].filter((size) => size <= width))];
+const imageSet = (format: string) => imageWidths.map((size) => `${webp.replace('.webp', `-${size}.${format}`)} ${size}w`).join(', ');
+// Account for object-fit: cover: the tall desktop cards need more pixels than
+// their narrow image wrapper suggests. Mobile cards have a fixed 240px image.
+const imageSizes = `(max-width: 1024px) max(calc(100vw - 8vw), ${Math.ceil(240 * width / height)}px), ${featured ? 'min(60vw, 800px)' : `${Math.ceil(624 * width / height)}px`}`;
+const imageError = `this.onerror=null; this.parentElement.querySelectorAll('source').forEach(source => source.remove()); this.removeAttribute('srcset'); this.src=${JSON.stringify(fallback)};`;
 ---
 <a href={href} target="_blank" rel="noopener noreferrer" class={featured ? 'project-card featured' : 'project-card'} style={`--accent-rgb: ${accentRgb}; text-decoration: none; color: inherit;`} aria-label={accessibleLabel}>
   <div class="project-inner-grid"></div>
   <div class="project-img-wrapper">
     <picture>
-      <source srcset={`${webp.replace(".webp", "-480.webp")} 480w, ${webp.replace(".webp", "-800.webp")} 800w, ${webp} ${width}w`} sizes="(max-width: 768px) 92vw, (max-width: 1024px) 80vw, 60vw" type="image/webp" />
-      <img src={png} width={width} height={height} loading="lazy" decoding="async" alt={alt} onerror={imageError} />
+      <source srcset={imageSet('avif')} sizes={imageSizes} type="image/avif" />
+      <source srcset={imageSet('webp')} sizes={imageSizes} type="image/webp" />
+      <img src={webp.replace('.webp', '-800.webp')} width={width} height={height} loading="lazy" decoding="async" alt={alt} onerror={imageError} />
     </picture>
   </div>
   <div class="project-info">

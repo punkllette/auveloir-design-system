@@ -1,6 +1,7 @@
 let disposePage = () => {};
 
 function initializePortfolio() {
+  const timelineBody = document.querySelector<HTMLElement>('.timeline-body');
   disposePage();
   document.body.classList.toggle('in-catalog-iframe', window.self !== window.top);
 
@@ -62,10 +63,8 @@ function initializePortfolio() {
   }
 
   const progressLine = document.getElementById('timeline-progress-v');
-  const timelineBody = main.querySelector('.timeline-body');
-  const updateTimelineProgress = () => {
-    if (!progressLine || !timelineBody) return;
-    const rect = timelineBody.getBoundingClientRect();
+  const updateTimelineProgress = (rect = timelineBody?.getBoundingClientRect()) => {
+    if (!progressLine || !rect || !rect.height) return;
     const startScroll = rect.top - window.innerHeight / 2;
     {
       const progress = Math.min(Math.max((Math.max(-startScroll, 0) / rect.height) * 100, 0), 100);
@@ -98,9 +97,22 @@ function initializePortfolio() {
   };
   window.addEventListener('scroll', scheduleProgress, { passive: true, signal: controller.signal });
   window.addEventListener('resize', scheduleProgress, { signal: controller.signal });
-  updateTimelineProgress();
+  // Use the browser's completed layout snapshot instead of forcing layout
+  // immediately after the startup class mutations.
+  let initialProgressObserver: IntersectionObserver | undefined;
+  if (timelineBody && 'IntersectionObserver' in window) {
+    initialProgressObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry) updateTimelineProgress(entry.boundingClientRect);
+      initialProgressObserver?.disconnect();
+    });
+    initialProgressObserver.observe(timelineBody);
+  } else {
+    scheduleProgress();
+  }
 
   disposePage = () => {
+    initialProgressObserver?.disconnect();
     motionObserver?.disconnect();
     motionSections.forEach((section) => section.classList.remove('motion-idle'));
     revealObserver?.disconnect();
