@@ -11,7 +11,7 @@ if (!/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(sheetsWebAp
   <p class="cta-subtitle">Deixe seu nome, e-mail e telefone. Entrarei em contato para conversar sobre seu projeto.</p>
 
   <form class="contact-capture" data-track-contact="true" action={sheetsWebAppURL} method="POST" target="_top">
-    <input class="contact-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+    <input type="hidden" name="_honey" value="" />
 
     <div class="contact-fields">
       <label class="contact-name" for="contact-name">Nome
@@ -50,7 +50,6 @@ if (!/^https:\/\/script\.google\.com\/macros\/s\/[\w-]+\/exec$/.test(sheetsWebAp
   .contact-consent { display: flex; align-items: flex-start; gap: .65rem; margin-top: 1.25rem; color: var(--text-secondary); font-size: .85rem; line-height: 1.5; cursor: pointer; }
   .contact-consent input { width: 18px; height: 18px; flex: none; margin-top: .12rem; accent-color: var(--primary-light); }
   .contact-privacy { margin: .6rem 0 1.5rem; color: var(--text-muted); font-size: .75rem; line-height: 1.5; }
-  .contact-honey { position: absolute; left: -9999px; width: 1px; height: 1px; }
   .contact-capture button { display: flex; margin: 0 auto; font-family: inherit; }
   .contact-submit-label { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: .65rem; }
   @media (max-width: 600px) { .contact-fields { grid-template-columns: 1fr; } .contact-capture button { width: 100%; } }
