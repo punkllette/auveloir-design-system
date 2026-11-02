@@ -1,69 +1,97 @@
-/** Cole no Apps Script aberto pela planilha em Extensões > Apps Script. */
-const SHEET_NAME = 'Contatos';
-const HEADERS = ['Recebido em', 'Nome', 'E-mail', 'Telefone', 'Consentimento'];
-const NOTIFY_EMAIL = 'mello@auveloir.com';
+const PLANILHA_ID = '17WH_LTEGV0sMk0O80scP70twvAN6HcgwybPr6MXLMMo';
+const ABA = 'Contatos';
 
-// Abra a URL /exec sem enviar dados para confirmar que esta versão foi publicada.
 function doGet() {
-  return HtmlService.createHtmlOutput('<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>AUVELOIR — formulário ativo</title><body><h1>Formulário AUVELOIR ativo</h1><p>O envio de contatos usa POST.</p></body></html>');
+  return pagina_('Formulário ativo — versão com quatro colunas.');
 }
 
-function doPost(request) {
-  try {
-    const data = request && request.parameter ? request.parameter : {};
-    if (data._honey) return responsePage_('Contato recebido.', true);
+function doPost(e) {
+  const dados = e && e.parameter ? e.parameter : {};
 
-    const name = clean_(data.name, 120);
-    const email = clean_(data.email, 254);
-    const phone = clean_(data.telefone, 40);
-    if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !/^[+\d\s().-]{8,40}$/.test(phone) || data.consentimento !== 'Sim') {
-      return responsePage_('Confira nome, e-mail, telefone e autorização antes de enviar.', false);
-    }
-
-    const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-    if (!spreadsheet) throw new Error('Abra este script pela planilha em Extensões > Apps Script.');
-    const lock = LockService.getScriptLock();
-    lock.waitLock(10000);
-    try {
-      let sheet = spreadsheet.getSheetByName(SHEET_NAME);
-      if (!sheet) sheet = spreadsheet.insertSheet(SHEET_NAME);
-      if (sheet.getLastRow() === 0) sheet.appendRow(HEADERS);
-      const row = sheet.getLastRow() + 1;
-      sheet.getRange(row, 4).setNumberFormat('@');
-      sheet.getRange(row, 1, 1, 5).setValues([[new Date(), safeCell_(name), safeCell_(email), safeCell_(phone), 'Sim']]);
-      SpreadsheetApp.flush();
-    } finally {
-      lock.releaseLock();
-    }
-
-    // A planilha é a fonte de verdade; falha na notificação não pede reenvio.
-    try {
-      MailApp.sendEmail({
-        to: NOTIFY_EMAIL,
-        subject: 'Novo contato pelo portfólio AUVELOIR',
-        body: `Nome: ${name}\nE-mail: ${email}\nTelefone: ${phone}\n\nO contato também está na aba ${SHEET_NAME}.`,
-        replyTo: email,
-      });
-    } catch (notificationError) {
-      console.error('Contato salvo, mas a notificação falhou:', notificationError);
-    }
-    return responsePage_('Contato recebido. Obrigado!', true);
-  } catch (error) {
-    console.error('Não foi possível salvar o contato:', error);
-    return responsePage_('Não foi possível enviar agora. Tente novamente ou escreva para mello@auveloir.com.', false);
+  if (dados._honey) {
+    return pagina_('Não foi possível enviar.');
   }
+
+  const nome = limpar_(dados.name, 120);
+  const email = limpar_(dados.email, 254);
+  const telefone = limpar_(dados.telefone, 40);
+
+  if (
+    !nome ||
+    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
+    !/^[+\d\s().-]+$/.test(telefone) ||
+    telefone.replace(/\D/g, '').length < 8
+  ) {
+    return pagina_('Confira nome, e-mail e telefone e tente novamente.');
+  }
+
+  const trava = LockService.getScriptLock();
+
+  try {
+    trava.waitLock(10000);
+
+    const planilha = SpreadsheetApp.openById(PLANILHA_ID);
+    let aba = planilha.getSheetByName(ABA);
+
+    if (!aba) {
+      aba = planilha.insertSheet(ABA);
+    }
+
+    aba.getRange(1, 1, 1, 4).setValues([
+      ['Data', 'Nome', 'E-mail', 'Telefone']
+    ]);
+
+    const linha = aba.getLastRow() + 1;
+
+    aba.getRange(linha, 2, 1, 3).setNumberFormat('@');
+    aba.getRange(linha, 1, 1, 4).setValues([[
+      new Date(),
+      proteger_(nome),
+      proteger_(email),
+      proteger_(telefone)
+    ]]);
+
+    aba.getRange(linha, 1).setNumberFormat('dd/MM/yyyy HH:mm');
+    SpreadsheetApp.flush();
+
+  } catch (erro) {
+    console.error(erro);
+    return pagina_(
+      'Não foi possível confirmar o envio. Entre em contato pelo e-mail mello@auveloir.com.'
+    );
+  } finally {
+    if (trava.hasLock()) {
+      trava.releaseLock();
+    }
+  }
+
+  return pagina_('Contato salvo. Obrigado! Entrarei em contato.');
 }
 
-function clean_(value, maxLength) {
-  return String(value || '').replace(/[\u0000-\u001f\u007f]/g, ' ').trim().slice(0, maxLength);
+function limpar_(valor, limite) {
+  return String(valor || '')
+    .replace(/[\u0000-\u001f\u007f]/g, ' ')
+    .trim()
+    .slice(0, limite);
 }
 
-function safeCell_(value) {
-  // Impede que dados enviados sejam interpretados como fórmulas na planilha.
-  return /^[=+\-@]/.test(value) ? "'" + value : value;
+function proteger_(valor) {
+  return /^[=+\-@]/.test(valor) ? "'" + valor : valor;
 }
 
-function responsePage_(message, success) {
-  const title = success ? 'Obrigado pelo contato' : 'Não foi possível enviar';
-  return HtmlService.createHtmlOutput(`<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} — AUVELOIR</title><style>body{font:16px/1.6 system-ui,sans-serif;background:#090b10;color:#f0f1f3;min-height:100vh;display:grid;place-items:center;margin:0;padding:1rem}main{max-width:34rem;text-align:center}h1{font-size:clamp(2rem,5vw,3rem)}p{color:#a7adba}a{color:#ff3352}</style></head><body><main><h1>${title}</h1><p>${message}</p><a href="https://www.auveloir.com/">Voltar ao portfólio</a></main></body></html>`).setTitle(title + ' — AUVELOIR');
+function pagina_(mensagem) {
+  return HtmlService.createHtmlOutput(`
+    <!doctype html>
+    <html lang="pt-BR">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Contato — AUVELOIR</title>
+      </head>
+      <body style="font-family:Arial,sans-serif;padding:40px;text-align:center">
+        <h1>${mensagem}</h1>
+        <a href="https://www.auveloir.com/">Voltar ao portfólio</a>
+      </body>
+    </html>
+  `);
 }
